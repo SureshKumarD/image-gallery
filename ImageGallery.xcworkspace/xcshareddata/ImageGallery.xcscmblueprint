@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2ACCBDB168B5516B2512C75ACEC2AC11ABA6E9A2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "38FA5B6C5C5AFBD67EAF0BDBBC069021B15806DB" : 0,
+    "2ACCBDB168B5516B2512C75ACEC2AC11ABA6E9A2" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EDB4F138-0677-4BD2-9849-AB902DF6A475",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "38FA5B6C5C5AFBD67EAF0BDBBC069021B15806DB" : "ImageGallery\/ImageGallery\/API\/ImgurSession\/",
+    "2ACCBDB168B5516B2512C75ACEC2AC11ABA6E9A2" : "ImageGallery\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ImageGallery",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ImageGallery.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SureshKumarD\/ImageGallery.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2ACCBDB168B5516B2512C75ACEC2AC11ABA6E9A2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/geoffmacd\/ImgurSession.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "38FA5B6C5C5AFBD67EAF0BDBBC069021B15806DB"
+    }
+  ]
+}
