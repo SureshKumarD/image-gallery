@@ -2,7 +2,7 @@
 //  ImageGalleryTests.swift
 //  ImageGalleryTests
 //
-//  Created by Suresh on 4/5/16.
+//  Created by Suresh on 4/7/16.
 //  Copyright © 2016 Suresh. All rights reserved.
 //
 
