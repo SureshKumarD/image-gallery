@@ -8,34 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8EDF2DD1E23B02BB631E9E19 /* libPods-ImageGallery.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 212EA8A04FAFDC93A543150E /* libPods-ImageGallery.a */; };
-		F96700E11CB5809800E5759D /* IMGResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700A51CB5809800E5759D /* IMGResponseSerializer.m */; };
-		F96700E21CB5809800E5759D /* IMGSession.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700A71CB5809800E5759D /* IMGSession.m */; };
-		F96700E31CB5809800E5759D /* IMGAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700AB1CB5809800E5759D /* IMGAccount.m */; };
-		F96700E41CB5809800E5759D /* IMGAccountSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700AD1CB5809800E5759D /* IMGAccountSettings.m */; };
-		F96700E51CB5809800E5759D /* IMGAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700AF1CB5809800E5759D /* IMGAlbum.m */; };
-		F96700E61CB5809800E5759D /* IMGBasicAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700B11CB5809800E5759D /* IMGBasicAlbum.m */; };
-		F96700E71CB5809800E5759D /* IMGComment.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700B31CB5809800E5759D /* IMGComment.m */; };
-		F96700E81CB5809800E5759D /* IMGConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700B51CB5809800E5759D /* IMGConversation.m */; };
-		F96700E91CB5809800E5759D /* IMGGalleryAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700B71CB5809800E5759D /* IMGGalleryAlbum.m */; };
-		F96700EA1CB5809800E5759D /* IMGGalleryImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700B91CB5809800E5759D /* IMGGalleryImage.m */; };
-		F96700EB1CB5809800E5759D /* IMGGalleryProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700BC1CB5809800E5759D /* IMGGalleryProfile.m */; };
-		F96700EC1CB5809800E5759D /* IMGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700BE1CB5809800E5759D /* IMGImage.m */; };
-		F96700ED1CB5809800E5759D /* IMGMeme.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700C01CB5809800E5759D /* IMGMeme.m */; };
-		F96700EE1CB5809800E5759D /* IMGMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700C21CB5809800E5759D /* IMGMessage.m */; };
-		F96700EF1CB5809800E5759D /* IMGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700C41CB5809800E5759D /* IMGModel.m */; };
-		F96700F01CB5809800E5759D /* IMGNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700C61CB5809800E5759D /* IMGNotification.m */; };
-		F96700F11CB5809800E5759D /* IMGVote.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700C91CB5809800E5759D /* IMGVote.m */; };
-		F96700F21CB5809800E5759D /* NSDictionary+IMG.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700CB1CB5809800E5759D /* NSDictionary+IMG.m */; };
-		F96700F31CB5809800E5759D /* NSError+IMGError.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700CD1CB5809800E5759D /* NSError+IMGError.m */; };
-		F96700F41CB5809800E5759D /* IMGAccountRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700D01CB5809800E5759D /* IMGAccountRequest.m */; };
-		F96700F51CB5809800E5759D /* IMGAlbumRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700D21CB5809800E5759D /* IMGAlbumRequest.m */; };
-		F96700F61CB5809800E5759D /* IMGCommentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700D41CB5809800E5759D /* IMGCommentRequest.m */; };
-		F96700F71CB5809800E5759D /* IMGConversationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700D61CB5809800E5759D /* IMGConversationRequest.m */; };
-		F96700F81CB5809800E5759D /* IMGEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700D81CB5809800E5759D /* IMGEndpoint.m */; };
-		F96700F91CB5809800E5759D /* IMGGalleryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700DA1CB5809800E5759D /* IMGGalleryRequest.m */; };
-		F96700FA1CB5809800E5759D /* IMGImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700DC1CB5809800E5759D /* IMGImageRequest.m */; };
-		F96700FB1CB5809800E5759D /* IMGMemeGen.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700DE1CB5809800E5759D /* IMGMemeGen.m */; };
-		F96700FC1CB5809800E5759D /* IMGNotificationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F96700E01CB5809800E5759D /* IMGNotificationRequest.m */; };
+		F96702141CB58B3700E5759D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96702131CB58B3700E5759D /* DataManager.swift */; };
+		F96702161CB58B4F00E5759D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96702151CB58B4F00E5759D /* NetworkManager.swift */; };
+		F96702191CB5955300E5759D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96702181CB5955300E5759D /* Constants.swift */; };
 		F992730D1CB422B0001CC471 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F992730C1CB422B0001CC471 /* AppDelegate.swift */; };
 		F992730F1CB422B0001CC471 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F992730E1CB422B0001CC471 /* ViewController.swift */; };
 		F99273121CB422B0001CC471 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F99273101CB422B0001CC471 /* Main.storyboard */; };
@@ -74,65 +49,10 @@
 		212EA8A04FAFDC93A543150E /* libPods-ImageGallery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ImageGallery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		775BE9432AD52FB5162B97BC /* Pods-ImageGallery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageGallery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageGallery/Pods-ImageGallery.debug.xcconfig"; sourceTree = "<group>"; };
 		931DA09D4300928E5E8D8B36 /* Pods-ImageGallery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageGallery.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageGallery/Pods-ImageGallery.release.xcconfig"; sourceTree = "<group>"; };
-		F96700A41CB5809800E5759D /* IMGResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGResponseSerializer.h; sourceTree = "<group>"; };
-		F96700A51CB5809800E5759D /* IMGResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGResponseSerializer.m; sourceTree = "<group>"; };
-		F96700A61CB5809800E5759D /* IMGSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGSession.h; sourceTree = "<group>"; };
-		F96700A71CB5809800E5759D /* IMGSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGSession.m; sourceTree = "<group>"; };
-		F96700A81CB5809800E5759D /* ImgurSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImgurSession.h; sourceTree = "<group>"; };
-		F96700AA1CB5809800E5759D /* IMGAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGAccount.h; sourceTree = "<group>"; };
-		F96700AB1CB5809800E5759D /* IMGAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGAccount.m; sourceTree = "<group>"; };
-		F96700AC1CB5809800E5759D /* IMGAccountSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGAccountSettings.h; sourceTree = "<group>"; };
-		F96700AD1CB5809800E5759D /* IMGAccountSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGAccountSettings.m; sourceTree = "<group>"; };
-		F96700AE1CB5809800E5759D /* IMGAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGAlbum.h; sourceTree = "<group>"; };
-		F96700AF1CB5809800E5759D /* IMGAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGAlbum.m; sourceTree = "<group>"; };
-		F96700B01CB5809800E5759D /* IMGBasicAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGBasicAlbum.h; sourceTree = "<group>"; };
-		F96700B11CB5809800E5759D /* IMGBasicAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGBasicAlbum.m; sourceTree = "<group>"; };
-		F96700B21CB5809800E5759D /* IMGComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGComment.h; sourceTree = "<group>"; };
-		F96700B31CB5809800E5759D /* IMGComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGComment.m; sourceTree = "<group>"; };
-		F96700B41CB5809800E5759D /* IMGConversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGConversation.h; sourceTree = "<group>"; };
-		F96700B51CB5809800E5759D /* IMGConversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGConversation.m; sourceTree = "<group>"; };
-		F96700B61CB5809800E5759D /* IMGGalleryAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGGalleryAlbum.h; sourceTree = "<group>"; };
-		F96700B71CB5809800E5759D /* IMGGalleryAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGGalleryAlbum.m; sourceTree = "<group>"; };
-		F96700B81CB5809800E5759D /* IMGGalleryImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGGalleryImage.h; sourceTree = "<group>"; };
-		F96700B91CB5809800E5759D /* IMGGalleryImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGGalleryImage.m; sourceTree = "<group>"; };
-		F96700BA1CB5809800E5759D /* IMGGalleryObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGGalleryObject.h; sourceTree = "<group>"; };
-		F96700BB1CB5809800E5759D /* IMGGalleryProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGGalleryProfile.h; sourceTree = "<group>"; };
-		F96700BC1CB5809800E5759D /* IMGGalleryProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGGalleryProfile.m; sourceTree = "<group>"; };
-		F96700BD1CB5809800E5759D /* IMGImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGImage.h; sourceTree = "<group>"; };
-		F96700BE1CB5809800E5759D /* IMGImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGImage.m; sourceTree = "<group>"; };
-		F96700BF1CB5809800E5759D /* IMGMeme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGMeme.h; sourceTree = "<group>"; };
-		F96700C01CB5809800E5759D /* IMGMeme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGMeme.m; sourceTree = "<group>"; };
-		F96700C11CB5809800E5759D /* IMGMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGMessage.h; sourceTree = "<group>"; };
-		F96700C21CB5809800E5759D /* IMGMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGMessage.m; sourceTree = "<group>"; };
-		F96700C31CB5809800E5759D /* IMGModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGModel.h; sourceTree = "<group>"; };
-		F96700C41CB5809800E5759D /* IMGModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGModel.m; sourceTree = "<group>"; };
-		F96700C51CB5809800E5759D /* IMGNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGNotification.h; sourceTree = "<group>"; };
-		F96700C61CB5809800E5759D /* IMGNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGNotification.m; sourceTree = "<group>"; };
-		F96700C71CB5809800E5759D /* IMGObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGObject.h; sourceTree = "<group>"; };
-		F96700C81CB5809800E5759D /* IMGVote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGVote.h; sourceTree = "<group>"; };
-		F96700C91CB5809800E5759D /* IMGVote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGVote.m; sourceTree = "<group>"; };
-		F96700CA1CB5809800E5759D /* NSDictionary+IMG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+IMG.h"; sourceTree = "<group>"; };
-		F96700CB1CB5809800E5759D /* NSDictionary+IMG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+IMG.m"; sourceTree = "<group>"; };
-		F96700CC1CB5809800E5759D /* NSError+IMGError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+IMGError.h"; sourceTree = "<group>"; };
-		F96700CD1CB5809800E5759D /* NSError+IMGError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+IMGError.m"; sourceTree = "<group>"; };
-		F96700CF1CB5809800E5759D /* IMGAccountRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGAccountRequest.h; sourceTree = "<group>"; };
-		F96700D01CB5809800E5759D /* IMGAccountRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGAccountRequest.m; sourceTree = "<group>"; };
-		F96700D11CB5809800E5759D /* IMGAlbumRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGAlbumRequest.h; sourceTree = "<group>"; };
-		F96700D21CB5809800E5759D /* IMGAlbumRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGAlbumRequest.m; sourceTree = "<group>"; };
-		F96700D31CB5809800E5759D /* IMGCommentRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGCommentRequest.h; sourceTree = "<group>"; };
-		F96700D41CB5809800E5759D /* IMGCommentRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGCommentRequest.m; sourceTree = "<group>"; };
-		F96700D51CB5809800E5759D /* IMGConversationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGConversationRequest.h; sourceTree = "<group>"; };
-		F96700D61CB5809800E5759D /* IMGConversationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGConversationRequest.m; sourceTree = "<group>"; };
-		F96700D71CB5809800E5759D /* IMGEndpoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGEndpoint.h; sourceTree = "<group>"; };
-		F96700D81CB5809800E5759D /* IMGEndpoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGEndpoint.m; sourceTree = "<group>"; };
-		F96700D91CB5809800E5759D /* IMGGalleryRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGGalleryRequest.h; sourceTree = "<group>"; };
-		F96700DA1CB5809800E5759D /* IMGGalleryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGGalleryRequest.m; sourceTree = "<group>"; };
-		F96700DB1CB5809800E5759D /* IMGImageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGImageRequest.h; sourceTree = "<group>"; };
-		F96700DC1CB5809800E5759D /* IMGImageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGImageRequest.m; sourceTree = "<group>"; };
-		F96700DD1CB5809800E5759D /* IMGMemeGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGMemeGen.h; sourceTree = "<group>"; };
-		F96700DE1CB5809800E5759D /* IMGMemeGen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGMemeGen.m; sourceTree = "<group>"; };
-		F96700DF1CB5809800E5759D /* IMGNotificationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGNotificationRequest.h; sourceTree = "<group>"; };
-		F96700E01CB5809800E5759D /* IMGNotificationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMGNotificationRequest.m; sourceTree = "<group>"; };
+		F96702121CB5889A00E5759D /* Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging_Header.h; sourceTree = "<group>"; };
+		F96702131CB58B3700E5759D /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		F96702151CB58B4F00E5759D /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F96702181CB5955300E5759D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F99273091CB422B0001CC471 /* ImageGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F992730C1CB422B0001CC471 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F992730E1CB422B0001CC471 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -150,7 +70,6 @@
 		F99273471CB425A2001CC471 /* GalleryCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GalleryCollectionView.xib; sourceTree = "<group>"; };
 		F992734E1CB44502001CC471 /* GalleryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GalleryCollectionViewCell.xib; sourceTree = "<group>"; };
 		F99273501CB4451F001CC471 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
-		F99273521CB44E89001CC471 /* Constants.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.pch; sourceTree = "<group>"; };
 		F99273531CB455E8001CC471 /* GalleryTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GalleryTableView.xib; sourceTree = "<group>"; };
 		F99273571CB456AD001CC471 /* GalleryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryTableViewCell.swift; sourceTree = "<group>"; };
 		F99273581CB456AD001CC471 /* GalleryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GalleryTableViewCell.xib; sourceTree = "<group>"; };
@@ -200,99 +119,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F96700A21CB5809800E5759D /* API */ = {
-			isa = PBXGroup;
-			children = (
-				F96700A31CB5809800E5759D /* ImgurSession */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		F96700A31CB5809800E5759D /* ImgurSession */ = {
-			isa = PBXGroup;
-			children = (
-				F96700A41CB5809800E5759D /* IMGResponseSerializer.h */,
-				F96700A51CB5809800E5759D /* IMGResponseSerializer.m */,
-				F96700A61CB5809800E5759D /* IMGSession.h */,
-				F96700A71CB5809800E5759D /* IMGSession.m */,
-				F96700A81CB5809800E5759D /* ImgurSession.h */,
-				F96700A91CB5809800E5759D /* Models */,
-				F96700CA1CB5809800E5759D /* NSDictionary+IMG.h */,
-				F96700CB1CB5809800E5759D /* NSDictionary+IMG.m */,
-				F96700CC1CB5809800E5759D /* NSError+IMGError.h */,
-				F96700CD1CB5809800E5759D /* NSError+IMGError.m */,
-				F96700CE1CB5809800E5759D /* Requests */,
-			);
-			path = ImgurSession;
-			sourceTree = "<group>";
-		};
-		F96700A91CB5809800E5759D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				F96700AA1CB5809800E5759D /* IMGAccount.h */,
-				F96700AB1CB5809800E5759D /* IMGAccount.m */,
-				F96700AC1CB5809800E5759D /* IMGAccountSettings.h */,
-				F96700AD1CB5809800E5759D /* IMGAccountSettings.m */,
-				F96700AE1CB5809800E5759D /* IMGAlbum.h */,
-				F96700AF1CB5809800E5759D /* IMGAlbum.m */,
-				F96700B01CB5809800E5759D /* IMGBasicAlbum.h */,
-				F96700B11CB5809800E5759D /* IMGBasicAlbum.m */,
-				F96700B21CB5809800E5759D /* IMGComment.h */,
-				F96700B31CB5809800E5759D /* IMGComment.m */,
-				F96700B41CB5809800E5759D /* IMGConversation.h */,
-				F96700B51CB5809800E5759D /* IMGConversation.m */,
-				F96700B61CB5809800E5759D /* IMGGalleryAlbum.h */,
-				F96700B71CB5809800E5759D /* IMGGalleryAlbum.m */,
-				F96700B81CB5809800E5759D /* IMGGalleryImage.h */,
-				F96700B91CB5809800E5759D /* IMGGalleryImage.m */,
-				F96700BA1CB5809800E5759D /* IMGGalleryObject.h */,
-				F96700BB1CB5809800E5759D /* IMGGalleryProfile.h */,
-				F96700BC1CB5809800E5759D /* IMGGalleryProfile.m */,
-				F96700BD1CB5809800E5759D /* IMGImage.h */,
-				F96700BE1CB5809800E5759D /* IMGImage.m */,
-				F96700BF1CB5809800E5759D /* IMGMeme.h */,
-				F96700C01CB5809800E5759D /* IMGMeme.m */,
-				F96700C11CB5809800E5759D /* IMGMessage.h */,
-				F96700C21CB5809800E5759D /* IMGMessage.m */,
-				F96700C31CB5809800E5759D /* IMGModel.h */,
-				F96700C41CB5809800E5759D /* IMGModel.m */,
-				F96700C51CB5809800E5759D /* IMGNotification.h */,
-				F96700C61CB5809800E5759D /* IMGNotification.m */,
-				F96700C71CB5809800E5759D /* IMGObject.h */,
-				F96700C81CB5809800E5759D /* IMGVote.h */,
-				F96700C91CB5809800E5759D /* IMGVote.m */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		F96700CE1CB5809800E5759D /* Requests */ = {
-			isa = PBXGroup;
-			children = (
-				F96700CF1CB5809800E5759D /* IMGAccountRequest.h */,
-				F96700D01CB5809800E5759D /* IMGAccountRequest.m */,
-				F96700D11CB5809800E5759D /* IMGAlbumRequest.h */,
-				F96700D21CB5809800E5759D /* IMGAlbumRequest.m */,
-				F96700D31CB5809800E5759D /* IMGCommentRequest.h */,
-				F96700D41CB5809800E5759D /* IMGCommentRequest.m */,
-				F96700D51CB5809800E5759D /* IMGConversationRequest.h */,
-				F96700D61CB5809800E5759D /* IMGConversationRequest.m */,
-				F96700D71CB5809800E5759D /* IMGEndpoint.h */,
-				F96700D81CB5809800E5759D /* IMGEndpoint.m */,
-				F96700D91CB5809800E5759D /* IMGGalleryRequest.h */,
-				F96700DA1CB5809800E5759D /* IMGGalleryRequest.m */,
-				F96700DB1CB5809800E5759D /* IMGImageRequest.h */,
-				F96700DC1CB5809800E5759D /* IMGImageRequest.m */,
-				F96700DD1CB5809800E5759D /* IMGMemeGen.h */,
-				F96700DE1CB5809800E5759D /* IMGMemeGen.m */,
-				F96700DF1CB5809800E5759D /* IMGNotificationRequest.h */,
-				F96700E01CB5809800E5759D /* IMGNotificationRequest.m */,
-			);
-			path = Requests;
-			sourceTree = "<group>";
-		};
 		F99273001CB422B0001CC471 = {
 			isa = PBXGroup;
 			children = (
+				F96702121CB5889A00E5759D /* Bridging_Header.h */,
 				F992730B1CB422B0001CC471 /* ImageGallery */,
 				F99273201CB422B0001CC471 /* ImageGalleryTests */,
 				F992732B1CB422B0001CC471 /* ImageGalleryUITests */,
@@ -315,10 +145,11 @@
 		F992730B1CB422B0001CC471 /* ImageGallery */ = {
 			isa = PBXGroup;
 			children = (
-				F96700A21CB5809800E5759D /* API */,
 				F992730C1CB422B0001CC471 /* AppDelegate.swift */,
 				F992730E1CB422B0001CC471 /* ViewController.swift */,
-				F99273521CB44E89001CC471 /* Constants.pch */,
+				F96702131CB58B3700E5759D /* DataManager.swift */,
+				F96702151CB58B4F00E5759D /* NetworkManager.swift */,
+				F96702181CB5955300E5759D /* Constants.swift */,
 				F99273101CB422B0001CC471 /* Main.storyboard */,
 				F99273431CB425A2001CC471 /* Views */,
 				F99273131CB422B0001CC471 /* Assets.xcassets */,
@@ -563,40 +394,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F96700ED1CB5809800E5759D /* IMGMeme.m in Sources */,
-				F96700EE1CB5809800E5759D /* IMGMessage.m in Sources */,
-				F96700F01CB5809800E5759D /* IMGNotification.m in Sources */,
-				F96700F11CB5809800E5759D /* IMGVote.m in Sources */,
-				F96700E31CB5809800E5759D /* IMGAccount.m in Sources */,
-				F96700EC1CB5809800E5759D /* IMGImage.m in Sources */,
-				F96700E21CB5809800E5759D /* IMGSession.m in Sources */,
-				F96700E51CB5809800E5759D /* IMGAlbum.m in Sources */,
-				F96700FC1CB5809800E5759D /* IMGNotificationRequest.m in Sources */,
-				F96700EF1CB5809800E5759D /* IMGModel.m in Sources */,
 				F992735C1CB456FA001CC471 /* GalleryTableView.swift in Sources */,
 				F992734A1CB425A2001CC471 /* GalleryCollectionView.swift in Sources */,
-				F96700F71CB5809800E5759D /* IMGConversationRequest.m in Sources */,
-				F96700F81CB5809800E5759D /* IMGEndpoint.m in Sources */,
-				F96700E11CB5809800E5759D /* IMGResponseSerializer.m in Sources */,
-				F96700E71CB5809800E5759D /* IMGComment.m in Sources */,
-				F96700F51CB5809800E5759D /* IMGAlbumRequest.m in Sources */,
 				F99273511CB4451F001CC471 /* GalleryCollectionViewCell.swift in Sources */,
-				F96700F61CB5809800E5759D /* IMGCommentRequest.m in Sources */,
-				F96700FB1CB5809800E5759D /* IMGMemeGen.m in Sources */,
-				F96700E81CB5809800E5759D /* IMGConversation.m in Sources */,
-				F96700F31CB5809800E5759D /* NSError+IMGError.m in Sources */,
+				F96702141CB58B3700E5759D /* DataManager.swift in Sources */,
+				F96702161CB58B4F00E5759D /* NetworkManager.swift in Sources */,
 				F99273591CB456AD001CC471 /* GalleryTableViewCell.swift in Sources */,
-				F96700FA1CB5809800E5759D /* IMGImageRequest.m in Sources */,
-				F96700F91CB5809800E5759D /* IMGGalleryRequest.m in Sources */,
 				F992730F1CB422B0001CC471 /* ViewController.swift in Sources */,
-				F96700E91CB5809800E5759D /* IMGGalleryAlbum.m in Sources */,
-				F96700F41CB5809800E5759D /* IMGAccountRequest.m in Sources */,
-				F96700EA1CB5809800E5759D /* IMGGalleryImage.m in Sources */,
-				F96700EB1CB5809800E5759D /* IMGGalleryProfile.m in Sources */,
-				F96700F21CB5809800E5759D /* NSDictionary+IMG.m in Sources */,
-				F96700E41CB5809800E5759D /* IMGAccountSettings.m in Sources */,
-				F96700E61CB5809800E5759D /* IMGBasicAlbum.m in Sources */,
 				F992730D1CB422B0001CC471 /* AppDelegate.swift in Sources */,
+				F96702191CB5955300E5759D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,6 +547,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.self.ImageGallery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Bridging_Header.h";
 			};
 			name = Debug;
 		};
@@ -753,6 +560,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.self.ImageGallery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Bridging_Header.h";
 			};
 			name = Release;
 		};

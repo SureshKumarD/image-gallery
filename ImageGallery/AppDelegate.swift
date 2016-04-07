@@ -12,10 +12,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var dataObject : DataManager!
+    public var networkObject : NetworkManager!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //Singleton classes to handle network related and data related functionalities.
+        self.instantiateCommonObjects()
         return true
     }
 
@@ -41,6 +45,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func instantiateCommonObjects() {
+        
+        self.dataObject      = DataManager.sharedDataManager()
+        self.networkObject   = NetworkManager.sharedNetworkManager()
+        
+    }
 
 }
 

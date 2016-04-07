@@ -51,7 +51,7 @@ public class GalleryCollectionView: UICollectionView, UICollectionViewDataSource
     public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
        
-        return CGSizeMake(UIScreen.mainScreen().bounds.size.width/2 - 10, 230)
+        return CGSizeMake(WIDTH_WINDOW_FRAME/2 - 10, 230)
     }
     
     //MARK:- CollectionView Delegates

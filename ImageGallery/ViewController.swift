@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.sampleApiHit()
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,6 +62,14 @@ class ViewController: UIViewController {
     func didFinishLayout() {
         self.galleryCollectionView.frame = self.galleryTypeContainerView.bounds
 
+    }
+    
+    
+    func sampleApiHit() {
+        APP_DELEGATE_INSTANCE?.networkObject .requestServer("gallery/hot/viral/0.json", type: ServerRequestType.Get, completionHandler: { (result, error) -> Void in
+            
+        })
+        
     }
     
 
