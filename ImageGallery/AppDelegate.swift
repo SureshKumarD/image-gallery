@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, IMGSessionDelegate{
 
     var window: UIWindow?
     var dataObject : DataManager!
@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Singleton classes to handle network related and data related functionalities.
         self.instantiateCommonObjects()
+        IMGSession.authenticatedSessionWithClientID(CLIENT_ID, secret: SECRET_KEY, authType: IMGAuthType.CodeAuth, withDelegate:self)
+        
         return true
     }
 
@@ -45,12 +47,56 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        
+        let params = NSMutableDictionary()
+        
+        for param in (url.query?.componentsSeparatedByString("&"))! {
+            let elements = NSArray(array: param.componentsSeparatedByString("="))
+            if(elements.count < 2) {
+                continue
+            }
+            params .setObject(elements[1], forKey: elements[0] as! String)
+            
+        }
+        let pinCode : String = params["code"] as! String
+        
+        if(pinCode.isEmpty) {
+            let alertView = UIAlertView(title: "Error", message: "Access was denied by Imgur", delegate: self, cancelButtonTitle: "OK")
+            alertView.show()
+            APP_DELEGATE_INSTANCE?.dataObject.startActivityIndicator()
+            return false;
+        }
+        IMGSession.sharedInstance().authenticateWithCode(pinCode)
+        
+        self.networkObject.fetchDefaultImageGallery({
+            APP_DELEGATE_INSTANCE?.dataObject.stopActivityIndicator()
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let homeVC = storyBoard.instantiateViewControllerWithIdentifier("HomeViewController")
+            let navController = self.window?.rootViewController as! UINavigationController
+            
+            navController.pushViewController(homeVC, animated: false)
+        })
+        
+        return true
+
+        
+
+    }
     func instantiateCommonObjects() {
         
         self.dataObject      = DataManager.sharedDataManager()
         self.networkObject   = NetworkManager.sharedNetworkManager()
         
     }
+    
+    
+    
+    //MARK:- IMGSessionDelegate
+    func imgurSessionNeedsExternalWebview(url: NSURL!, completion: (() -> Void)!) {
+        UIApplication.sharedApplication().openURL(url)
+    }
+   
 
 }
 

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  ImageGallery
 //
 //  Created by Suresh on 4/7/16.
@@ -8,18 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     //Storyboard objects...
     @IBOutlet weak var galleryTypeSegmentControl: UISegmentedControl!
     @IBOutlet weak var galleryTypeContainerView: UIView!
     var galleryCollectionView : GalleryCollectionView!
     
+    var galleryViewOption : GalleryView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         //Allocations/ Initializations
+        self.galleryViewOption = GalleryView.Staggered
         self.initializations()
         self.registerAllNibs()
     }
@@ -40,6 +43,9 @@ class ViewController: UIViewController {
     }
     //MARK:- Methods
     
+    
+    
+    
     //MARK:-
     //MARK:- Initial setups
     func initializations () {
@@ -49,6 +55,9 @@ class ViewController: UIViewController {
         flowLayout.minimumInteritemSpacing = 10
 
         self.galleryCollectionView = GalleryCollectionView(frame: self.galleryTypeContainerView.bounds,    collectionViewLayout: flowLayout)
+        self.galleryCollectionView.viewOption = self.galleryViewOption
+        
+        self.galleryCollectionView.imageInfoArray = (APP_DELEGATE_INSTANCE?.networkObject.objects)!
         self.galleryTypeContainerView.addSubview(galleryCollectionView)
         
     }
@@ -66,11 +75,23 @@ class ViewController: UIViewController {
     
     
     func sampleApiHit() {
-        APP_DELEGATE_INSTANCE?.networkObject .requestServer("gallery/hot/viral/0.json", type: ServerRequestType.Get, completionHandler: { (result, error) -> Void in
-            
-        })
+       
+        
+        IMGGalleryRequest.hotGalleryPage(0, success: { (objects: [AnyObject]!) -> Void in
+            print(objects)
+            }) { (error : NSError!) -> Void in
+                
+        }
+        
         
     }
+    
+    //MARK:- Item Selected Delegate
+    func itemSelected(item: AnyObject!) {
+        
+    }
+    
+    
     
 
 }

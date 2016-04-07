@@ -10,6 +10,11 @@ import UIKit
 
 class GalleryCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var gridCellImageView: UIImageView!
-    @IBOutlet weak var gridCellDescriptionLabel: UILabel!
+    @IBOutlet weak var cellTitleLabel: UILabel!
+    @IBOutlet weak var cellImageView: UIImageView!
+    @IBOutlet weak var cellDescriptionLabel: UILabel!
+    
+    @IBOutlet weak var upLabel: UILabel!
+    @IBOutlet weak var downLabel: UILabel!
+    
 }

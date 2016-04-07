@@ -15,8 +15,13 @@
 
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <Security/Security.h>
-#import <AFNetworking/AFNetworking.h>
+
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <CoreGraphics/CoreGraphics.h>
-
+#import <AFNetworking/AFNetworking.h>
+#import "Pods/SDWebImage/SDWebImage/UIImageView+WebCache.h"
+#import "ImageGallery/ImgurSession/IMGSession.h"
+#import "ImageGallery/ImgurSession/Requests/IMGGalleryRequest.h"
+#import "ImageGallery/ImgurSession/Models/IMGGalleryImage.h"
+#import "ImageGallery/ImgurSession/Models/IMGObject.h"
 #endif /* Bridging_Header_h */

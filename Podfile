@@ -4,7 +4,6 @@
 # use_frameworks!
 
 target 'ImageGallery' do
-
 pod 'AFNetworking'
 pod 'SDWebImage', '~>3.7'
 

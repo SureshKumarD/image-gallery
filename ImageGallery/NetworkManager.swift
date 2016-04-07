@@ -14,10 +14,11 @@ import UIKit
 
 
 var networkManager = NetworkManager()
-class NetworkManager: NSObject {
-    var sessionManager : AFHTTPSessionManager!
+public class NetworkManager: NSObject {
+//    var sessionManager : AFHTTPSessionManager!
+    var objects : Array<AnyObject>
     override init() {
-        
+        self.objects = []
     }
     class func sharedNetworkManager()-> NetworkManager! {
         networkManager = NetworkManager()
@@ -25,32 +26,21 @@ class NetworkManager: NSObject {
     }
     
     
-    public func requestServer(urlString:String!, type : ServerRequestType, completionHandler:  (result :AnyObject, error: NSError) -> Void) -> Void  {
-        
-        
-        
-        self.sessionManager  = AFHTTPSessionManager(baseURL: NSURL(string: BASE_URL))
-//        self.sessionManager.requestSerializer = AFJSONRequestSerializer()
-        self.sessionManager.requestSerializer.setValue(APP_ID, forHTTPHeaderField: "Authorization")
-        self.sessionManager.responseSerializer = AFJSONResponseSerializer()
-        
-        self.sessionManager.GET(urlString, parameters: nil, success: {
-            (task: NSURLSessionDataTask!, responseObject: AnyObject?) in
-            print("success")
-            let error : NSError? = nil;
-            completionHandler(result: responseObject!, error:error! )
-            }, failure: {
-                (task: NSURLSessionDataTask?, error: NSError) in
-                print("error")
-        })
-        
-
-        
+    func fetchDefaultImageGallery(completionHandler:()->Void) {
+    
+        IMGGalleryRequest.hotGalleryPage(0, success: { (objects: [AnyObject]!) -> Void in
+            APP_DELEGATE_INSTANCE?.dataObject.galleryImages = objects as [AnyObject]
+            self.objects = objects
+            completionHandler()
+        }) { (error : NSError!) -> Void in
+    
     }
     
+
+    }
     func setAuthentication (request: NSMutableURLRequest) -> NSMutableURLRequest! {
         
-        request.setValue(APP_ID, forHTTPHeaderField: "Authorization")
+        request.setValue(CLIENT_ID, forHTTPHeaderField: "Authorization")
         return request
     }
     
