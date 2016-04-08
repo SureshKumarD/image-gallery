@@ -22,64 +22,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageGallery/Views/CollectionView/GalleryCollectionView.swift"
+            timestampString = "481814907.257292"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "collectionView(_:didSelectItemAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageGallery/NetworkManager.swift"
-            timestampString = "481745012.310705"
+            timestampString = "481815516.24362"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "fetchDefaultImageGallery(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ImageGallery.NetworkManager.fetchDefaultImageGallery (ImageGallery.NetworkManager)(() -&gt; ()) -&gt; ()"
-                  moduleName = "ImageGallery"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suresh/Documents/ImageGallery/ImageGallery/NetworkManager.swift"
-                  timestampString = "481749570.690081"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "23">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ImageGallery.NetworkManager.(fetchDefaultImageGallery (ImageGallery.NetworkManager) -&gt; (() -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "ImageGallery"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suresh/Documents/ImageGallery/ImageGallery/NetworkManager.swift"
-                  timestampString = "481749570.690348"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "23">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ImageGallery/Views/CollectionView/GalleryCollectionView.swift"
-            timestampString = "481753140.136015"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "collectionView(_:cellForItemAtIndexPath:)"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "getAlbumWithId(_:isWithCoverImage:completionHandler:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -89,13 +57,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ImageGallery/Views/CollectionView/GalleryCollectionView.swift"
-            timestampString = "481753140.136015"
+            filePath = "ImageGallery/HomeViewController.swift"
+            timestampString = "481818415.249442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "collectionView(_:cellForItemAtIndexPath:)"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "changeGalleryView()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageGallery/HomeViewController.swift"
+            timestampString = "481818198.00177"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "setNavigationRightButton()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

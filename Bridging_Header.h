@@ -24,4 +24,8 @@
 #import "ImageGallery/ImgurSession/Requests/IMGGalleryRequest.h"
 #import "ImageGallery/ImgurSession/Models/IMGGalleryImage.h"
 #import "ImageGallery/ImgurSession/Models/IMGObject.h"
+#import "ImageGallery/ImgurSession/Models/IMGBasicAlbum.h"
+#import "ImageGallery/ImgurSession/Models/IMGGalleryAlbum.h"
+
+
 #endif /* Bridging_Header_h */

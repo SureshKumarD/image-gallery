@@ -17,52 +17,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scI-Hg-JJ3">
-                                <rect key="frame" x="0.0" y="20" width="320" height="68"/>
-                                <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BOS-fE-8wG">
-                                        <rect key="frame" x="30" y="20" width="260" height="29"/>
-                                        <segments>
-                                            <segment title="First"/>
-                                            <segment title="Second"/>
-                                        </segments>
-                                    </segmentedControl>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="BOS-fE-8wG" firstAttribute="leading" secondItem="scI-Hg-JJ3" secondAttribute="leading" constant="30" id="C7p-qn-mzW"/>
-                                    <constraint firstAttribute="height" constant="68" id="lVz-ay-flT"/>
-                                    <constraint firstItem="BOS-fE-8wG" firstAttribute="top" secondItem="scI-Hg-JJ3" secondAttribute="top" constant="20" id="nUG-iG-q5v"/>
-                                    <constraint firstAttribute="trailing" secondItem="BOS-fE-8wG" secondAttribute="trailing" constant="30" id="wgr-GE-RcI"/>
-                                    <constraint firstAttribute="bottom" secondItem="BOS-fE-8wG" secondAttribute="bottom" constant="20" id="xki-b4-o4p"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S6A-QZ-DZy">
-                                <rect key="frame" x="0.0" y="88" width="320" height="480"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="scI-Hg-JJ3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="4o4-uP-m7E"/>
-                            <constraint firstAttribute="trailing" secondItem="scI-Hg-JJ3" secondAttribute="trailing" id="6zB-Lr-e4e"/>
-                            <constraint firstAttribute="trailing" secondItem="S6A-QZ-DZy" secondAttribute="trailing" id="EOz-cy-P2G"/>
-                            <constraint firstItem="scI-Hg-JJ3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aSj-CN-jic"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="S6A-QZ-DZy" secondAttribute="bottom" id="diV-6a-JQV"/>
-                            <constraint firstItem="S6A-QZ-DZy" firstAttribute="top" secondItem="scI-Hg-JJ3" secondAttribute="bottom" id="mCS-s4-tng"/>
-                            <constraint firstItem="S6A-QZ-DZy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xWg-Ov-x19"/>
+                            <constraint firstAttribute="trailing" secondItem="S6A-QZ-DZy" secondAttribute="trailing" id="Lbi-T3-CZ8"/>
+                            <constraint firstItem="S6A-QZ-DZy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hiJ-j0-ZZS"/>
+                            <constraint firstItem="S6A-QZ-DZy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="krW-4P-gBK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="S6A-QZ-DZy" secondAttribute="bottom" id="lnF-fm-Quo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Image Gallery" id="YYh-AT-j3g"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="galleryTypeContainerView" destination="S6A-QZ-DZy" id="BQS-o8-UDX"/>
-                        <outlet property="galleryTypeSegmentControl" destination="BOS-fE-8wG" id="aoc-R8-jcK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1716" y="-371"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Cjq-Je-0xv">
+            <objects>
+                <viewController id="Xot-2k-F5S" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zcM-st-BP2"/>
+                        <viewControllerLayoutGuide type="bottom" id="C1p-Ei-JHI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HQA-Fh-DGE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N6K-iz-lAy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2122" y="-371"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="A5R-8T-8n2">
@@ -76,7 +71,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3RF-t4-J1c">
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3RF-t4-J1c">
                                 <rect key="frame" x="30" y="224" width="260" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please login, to see the beautiful images" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1z-tB-5jk">
@@ -85,7 +80,7 @@
                                             <constraint firstAttribute="height" constant="60" id="q0s-Hc-dPh"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5X-RL-Vwq">
@@ -99,7 +94,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="O5X-RL-Vwq" firstAttribute="leading" secondItem="3RF-t4-J1c" secondAttribute="leading" id="9EY-Cs-JME"/>
                                     <constraint firstAttribute="height" constant="120" id="Fyg-z9-grb"/>
@@ -112,7 +107,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="3RF-t4-J1c" firstAttribute="leading" secondItem="cLV-bJ-dcs" secondAttribute="leading" constant="30" id="3RX-43-6lP"/>
                             <constraint firstAttribute="trailing" secondItem="3RF-t4-J1c" secondAttribute="trailing" constant="30" id="rHY-Az-J68"/>

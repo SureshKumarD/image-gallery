@@ -21,6 +21,6 @@ class LoginViewController: UIViewController {
     
     func proceedLogin() {
         APP_DELEGATE_INSTANCE?.dataObject.startActivityIndicator()
-        APP_DELEGATE_INSTANCE?.networkObject.fetchDefaultImageGallery({})
+        APP_DELEGATE_INSTANCE?.networkObject.getHotImageGallery(0, sortViral: true, completionHandler: {})
     }
 }

@@ -8,14 +8,22 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, ItemDelegate {
     
     //Storyboard objects...
     @IBOutlet weak var galleryTypeSegmentControl: UISegmentedControl!
     @IBOutlet weak var galleryTypeContainerView: UIView!
-    var galleryCollectionView : GalleryCollectionView!
     
+    //Local variables...
+    var galleryCollectionView : GalleryCollectionView!
     var galleryViewOption : GalleryView!
+    
+    //Navigation Items...
+    var leftBarButtonItem : UIBarButtonItem!
+    var rightBarButtonItem : UIBarButtonItem!
+    var navigationLeftButton : UIButton!
+    var navigationRightButton : UIButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +38,8 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.sampleApiHit()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,16 +60,25 @@ class HomeViewController: UIViewController {
     //MARK:- Initial setups
     func initializations () {
         
+        //Navigation Bar
+        self.leftBarButtonItem = UIBarButtonItem()
+        self.rightBarButtonItem = UIBarButtonItem()
+        
         //CollectionView...
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.minimumInteritemSpacing = 10
+        flowLayout.minimumInteritemSpacing = 0
 
         self.galleryCollectionView = GalleryCollectionView(frame: self.galleryTypeContainerView.bounds,    collectionViewLayout: flowLayout)
         self.galleryCollectionView.viewOption = self.galleryViewOption
-        
+        GalleryCollectionView.itemDelegate = self
         self.galleryCollectionView.imageInfoArray = (APP_DELEGATE_INSTANCE?.networkObject.objects)!
         self.galleryTypeContainerView.addSubview(galleryCollectionView)
-        
+        self.galleryViewOption = GalleryView.Grid
+        self.setNavigationLeftButton()
+        self.setNavigationRightButton()
+        self.changeGalleryView()
+       
+
     }
 
     func registerAllNibs() {
@@ -88,8 +107,74 @@ class HomeViewController: UIViewController {
     
     //MARK:- Item Selected Delegate
     func itemSelected(item: AnyObject!) {
+        var albumID : String!
+        if(item.isKindOfClass(IMGGalleryAlbum)) {
+            albumID = item.albumID as String
+        }else {
+            albumID = ""
+        }
+        
+        APP_DELEGATE_INSTANCE?.networkObject.getAlbumWithId(albumID, isWithCoverImage: true, completionHandler: { () -> Void in
+            
+        })
+    }
+    
+    //MARK:- NavigationBar
+    func setNavigationLeftButton() {
+        
+        if(self.navigationLeftButton == nil) {
+            self.navigationLeftButton = UIButton(type: UIButtonType.Custom)
+        }
+        self.navigationLeftButton.frame = CGRectMake(0, 0, 50, 50)
+        self.leftBarButtonItem.customView = self.navigationRightButton
+        self.navigationItem.leftBarButtonItem = self.leftBarButtonItem
+        
+    
+
+    }
+    
+    
+    func setNavigationRightButton() {
+        if(self.navigationRightButton == nil) {
+            self.navigationRightButton = UIButton(type: UIButtonType.Custom)
+        }
+        self.navigationRightButton.frame = CGRectMake(0, 0, 50, 50)
+        self.navigationRightButton.tintColor = UIColor.blackColor()
+        self.navigationRightButton.imageView?.contentMode = UIViewContentMode.Center
+        self.navigationRightButton.addTarget(self, action: Selector("changeGalleryView"), forControlEvents: UIControlEvents.TouchUpInside)
+        self.rightBarButtonItem.customView = self.navigationRightButton
+        self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
+
+    }
+    
+    func changeGalleryView() {
+        var image :UIImage!
+        switch(self.galleryViewOption) {
+            
+        case GalleryView.Staggered? :
+            self.galleryViewOption = GalleryView.List
+            image = UIImage(named: "List")
+            break
+            
+            
+        case GalleryView.List?:
+            self.galleryViewOption = GalleryView.Grid
+             image = UIImage(named: "Grid")
+            break
+       
+        case GalleryView.Grid? :
+            self.galleryViewOption = GalleryView.Staggered
+            image = UIImage(named: "StaggeredGrid")
+            break
+        default:
+            break
+        }
+        
+        self.navigationRightButton.setImage(image, forState: UIControlState.Normal)
+        
         
     }
+    
     
     
     

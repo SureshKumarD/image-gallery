@@ -8,14 +8,10 @@
 
 import UIKit
 
-//let BASE_URL  = "https://api.imgur.com/"
-//let API_VERSION = "3"
-//let APP_ID = "ab7f22263dcb969"
-
 
 var networkManager = NetworkManager()
 public class NetworkManager: NSObject {
-//    var sessionManager : AFHTTPSessionManager!
+    
     var objects : Array<AnyObject>
     override init() {
         self.objects = []
@@ -26,28 +22,63 @@ public class NetworkManager: NSObject {
     }
     
     
-    func fetchDefaultImageGallery(completionHandler:()->Void) {
+    func getAlbumWithId(albumID :String!, isWithCoverImage: Bool, completionHandler:()->Void) {
+
+        IMGGalleryRequest.albumWithID(albumID, withCoverImage:isWithCoverImage , success:{(album : IMGGalleryAlbum!) -> Void in
+            print(album)
+            }){(error: NSError!) -> Void in
+        }
+        
+    }
+
+
+    //MARK:- Get Image Gallery from sections Hot, Top, User...
     
-        IMGGalleryRequest.hotGalleryPage(0, success: { (objects: [AnyObject]!) -> Void in
-            APP_DELEGATE_INSTANCE?.dataObject.galleryImages = objects as [AnyObject]
-            self.objects = objects
+    func getHotImageGallery(page : Int, sortViral: Bool, completionHandler:()->Void) {
+        IMGGalleryRequest.hotGalleryPage(page, withViralSort: sortViral, success: { (objects :[AnyObject]!) -> Void in
+            self.filterAlbums(objects)
             completionHandler()
-        }) { (error : NSError!) -> Void in
+            }) { (error: NSError!) -> Void in
+                
+        }
+    }
     
+        
+    func getTopImageGallery(page : Int, sortViral : Bool, completionHandler:()->Void) {
+        
+        IMGGalleryRequest.topGalleryPage(page, withWindow:IMGTopGalleryWindow.All , withViralSort: true, success: { (objects :[AnyObject]!) -> Void in
+            self.filterAlbums(objects)
+            completionHandler()
+            }) { (error : NSError!) -> Void in
+                
+        }
+       
+                    
+    }
+    
+        
+    func getuserImageGallery(page : Int,  sortViral : Bool, completionHandler:()->Void) {
+        
+        IMGGalleryRequest.userGalleryPage(page, withViralSort: true, showViral: true, success: { (objects:[AnyObject]!) -> Void in
+            self.filterAlbums(objects)
+            completionHandler()
+            }) { (error :NSError!) -> Void in
+                
+        }
+        
+                    
+    }
+    
+    
+    func filterAlbums(objects :[AnyObject!]) {
+        for object in objects {
+            if(object.isKindOfClass(IMGGalleryAlbum)) {
+                self.objects.append(object)
+            }
+        }
     }
     
 
-    }
-    func setAuthentication (request: NSMutableURLRequest) -> NSMutableURLRequest! {
-        
-        request.setValue(CLIENT_ID, forHTTPHeaderField: "Authorization")
-        return request
-    }
-    
-    func constructURL(urlString: String!)->String! {
-        
-        return (BASE_URL+"/"+API_VERSION+"/"+urlString)
-        
-    }
+
     
 }

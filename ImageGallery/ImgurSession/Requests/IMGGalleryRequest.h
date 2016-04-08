@@ -71,6 +71,8 @@ typedef NS_ENUM(NSInteger, IMGGalleryCommentSortType) {
  */
 +(void)galleryWithParameters:(NSDictionary *)parameters success:(void (^)(NSArray * objects))success failure:(void (^)(NSError * error))failure;
 
++ (void)albumWithID:(NSString *)albumID withCoverImage:(BOOL)coverImage success:(void (^)(IMGGalleryAlbum *))success failure:(void (^)(NSError *))failure;
+
 #pragma mark - Load Gallery objects
 /**
  Retrieves gallery object with id
@@ -92,7 +94,7 @@ typedef NS_ENUM(NSInteger, IMGGalleryCommentSortType) {
  @param albumID    album Id string as retrieved through gallery page call
  @param coverImage    should we download the cover image as well
  */
-+ (void)albumWithID:(NSString *)albumID withCoverImage:(BOOL)coverImage success:(void (^)(IMGGalleryAlbum *album))success failure:(void (^)(NSError *error))failure;
+//+ (void)albumWithID:(NSString *)albumID withCoverImage:(BOOL)coverImage success:(void (^)(IMGGalleryAlbum *album))success failure:(void (^)(NSError *error))failure;
 /**
  Retrieves gallery cover image and places it in images array
  @param album    album object o update with cover image
@@ -189,6 +191,7 @@ typedef NS_ENUM(NSInteger, IMGGalleryCommentSortType) {
  @param galleryObjectId    ID string of gallery object to retrieve comment count from
  */
 + (void)commentCountWithGalleryID:(NSString *)galleryObjectID success:(void (^)(NSInteger commentCount))success failure:(void (^)(NSError * error))failure;
+
 
 
 

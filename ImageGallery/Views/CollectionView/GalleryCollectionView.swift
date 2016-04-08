@@ -15,12 +15,14 @@ public class GalleryCollectionView: UICollectionView, UICollectionViewDataSource
     //local object
     public var imageInfoArray = []
     
+    //Delegate to pass data
+    static var itemDelegate : ItemDelegate!
+    
     var viewOption : GalleryView!
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         self.delegate = self
         self.dataSource = self
-        self.backgroundColor = UIColor.whiteColor()
         self.imageInfoArray = (APP_DELEGATE_INSTANCE?.networkObject.objects)!
         
     }
@@ -41,7 +43,8 @@ public class GalleryCollectionView: UICollectionView, UICollectionViewDataSource
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GalleryCollectionViewCell", forIndexPath: indexPath) as! GalleryCollectionViewCell
         cell.layer.cornerRadius = 1.0
         cell.layer.borderColor = UIColor.grayColor().CGColor
-        cell.backgroundColor = UIColor.whiteColor()
+//        cell.backgroundColor = UIColor.whiteColor()
+        cell.contentView.backgroundColor = UIColor.clearColor()
         
         let object = self.imageInfoArray[indexPath.row]
         let coverImage = object.coverImage() as IMGImage
@@ -58,8 +61,7 @@ public class GalleryCollectionView: UICollectionView, UICollectionViewDataSource
 //        cell.cellImageView.sd_setImageWithURL(url, placeholderImage: UIImage(named: "placeholder"))
         cell.upLabel.text = SYMBOL_UP_ARROW+"\(object.ups)"
         cell.downLabel.text = SYMBOL_DOWN_ARROW+"\(object.downs)"
-        cell.cellDescriptionLabel.text = coverImage.imageDescription
-        
+//
         return cell
     }
 
@@ -73,13 +75,15 @@ public class GalleryCollectionView: UICollectionView, UICollectionViewDataSource
         if(self.viewOption == GalleryView.Grid) {
             return CGSizeMake(WIDTH_WINDOW_FRAME - 10, 230)
         }else {
-            return CGSizeMake(WIDTH_WINDOW_FRAME/2 - 10, 230)
+            return CGSizeMake(WIDTH_WINDOW_FRAME/2, 230)
         }
     }
 //    
     //MARK:- CollectionView Delegates
     
     public func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let object = self.imageInfoArray[indexPath.row]
+        GalleryCollectionView.itemDelegate .itemSelected(object)
         
     }
     

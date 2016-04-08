@@ -7,27 +7,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="GalleryCollectionViewCell" reuseIdentifier="GalleryCollectionViewCell" id="ya5-7c-nVv" customClass="GalleryCollectionViewCell" customModule="ImageGallery" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="200" height="230"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.25" contentMode="center" restorationIdentifier="GalleryCollectionViewCell" reuseIdentifier="GalleryCollectionViewCell" id="ya5-7c-nVv" customClass="GalleryCollectionViewCell" customModule="ImageGallery" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="190"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="200" height="230"/>
+                <rect key="frame" x="0.0" y="0.0" width="200" height="190"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RLX-bQ-DSn">
                         <rect key="frame" x="5" y="40" width="190" height="120"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qn0-Vr-jv7">
-                        <rect key="frame" x="5" y="165" width="190" height="35"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="35" id="xQR-ED-oj2"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
-                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1GW-bY-vWR">
-                        <rect key="frame" x="5" y="205" width="95" height="21"/>
+                        <rect key="frame" x="5" y="165" width="95" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="rdW-S1-ask"/>
                         </constraints>
@@ -36,7 +27,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jrX-zX-VHl">
-                        <rect key="frame" x="100" y="205" width="95" height="21"/>
+                        <rect key="frame" x="100" y="165" width="95" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="lxX-Ot-7cC"/>
                         </constraints>
@@ -56,34 +47,31 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="qn0-Vr-jv7" secondAttribute="trailing" constant="5" id="4UH-wk-crh"/>
                 <constraint firstAttribute="bottom" secondItem="1GW-bY-vWR" secondAttribute="bottom" constant="4" id="6sJ-56-Jhg"/>
+                <constraint firstItem="1GW-bY-vWR" firstAttribute="top" secondItem="RLX-bQ-DSn" secondAttribute="bottom" constant="5" id="DnR-IB-zFh"/>
                 <constraint firstAttribute="bottom" secondItem="jrX-zX-VHl" secondAttribute="bottom" constant="4" id="NBB-jo-pYS"/>
                 <constraint firstItem="f6E-3t-J4H" firstAttribute="top" secondItem="ya5-7c-nVv" secondAttribute="top" constant="5" id="QYt-fI-Gsb"/>
                 <constraint firstAttribute="trailing" secondItem="f6E-3t-J4H" secondAttribute="trailing" constant="5" id="U5S-Cf-TYk"/>
                 <constraint firstItem="jrX-zX-VHl" firstAttribute="width" secondItem="1GW-bY-vWR" secondAttribute="width" id="UT2-OR-y71"/>
                 <constraint firstItem="jrX-zX-VHl" firstAttribute="leading" secondItem="1GW-bY-vWR" secondAttribute="trailing" id="Zov-39-ghD"/>
-                <constraint firstItem="qn0-Vr-jv7" firstAttribute="leading" secondItem="ya5-7c-nVv" secondAttribute="leading" constant="5" id="cDW-5l-4gl"/>
                 <constraint firstItem="f6E-3t-J4H" firstAttribute="leading" secondItem="ya5-7c-nVv" secondAttribute="leading" constant="5" id="cUA-oO-MLa"/>
                 <constraint firstAttribute="trailing" secondItem="jrX-zX-VHl" secondAttribute="trailing" constant="5" id="j5x-eT-GLs"/>
+                <constraint firstItem="jrX-zX-VHl" firstAttribute="top" secondItem="RLX-bQ-DSn" secondAttribute="bottom" constant="5" id="k1N-85-e0Y"/>
                 <constraint firstItem="1GW-bY-vWR" firstAttribute="leading" secondItem="ya5-7c-nVv" secondAttribute="leading" constant="5" id="nFB-Vq-gPT"/>
                 <constraint firstItem="RLX-bQ-DSn" firstAttribute="top" secondItem="f6E-3t-J4H" secondAttribute="bottom" constant="5" id="qUV-BO-5pp"/>
-                <constraint firstItem="jrX-zX-VHl" firstAttribute="top" secondItem="qn0-Vr-jv7" secondAttribute="bottom" constant="5" id="rTO-jn-fxu"/>
-                <constraint firstItem="qn0-Vr-jv7" firstAttribute="top" secondItem="RLX-bQ-DSn" secondAttribute="bottom" constant="5" id="ubb-YR-O1c"/>
                 <constraint firstItem="RLX-bQ-DSn" firstAttribute="leading" secondItem="ya5-7c-nVv" secondAttribute="leading" constant="5" id="vk5-IH-o80"/>
                 <constraint firstAttribute="trailing" secondItem="RLX-bQ-DSn" secondAttribute="trailing" constant="5" id="vsL-YI-AJU"/>
-                <constraint firstItem="1GW-bY-vWR" firstAttribute="top" secondItem="qn0-Vr-jv7" secondAttribute="bottom" constant="5" id="yB0-LT-PKW"/>
             </constraints>
-            <size key="customSize" width="182" height="63"/>
+            <size key="customSize" width="182" height="33"/>
             <connections>
-                <outlet property="cellDescriptionLabel" destination="qn0-Vr-jv7" id="b9P-Wf-DDY"/>
                 <outlet property="cellImageView" destination="RLX-bQ-DSn" id="qA5-Ud-ZEh"/>
                 <outlet property="cellTitleLabel" destination="f6E-3t-J4H" id="PBB-Xp-kTd"/>
                 <outlet property="downLabel" destination="jrX-zX-VHl" id="6RO-p6-z4Z"/>
                 <outlet property="upLabel" destination="1GW-bY-vWR" id="8Yo-cs-Jsq"/>
             </connections>
-            <point key="canvasLocation" x="169" y="187"/>
+            <point key="canvasLocation" x="169" y="172"/>
         </collectionViewCell>
     </objects>
 </document>

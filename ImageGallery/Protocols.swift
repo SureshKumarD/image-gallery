@@ -10,8 +10,6 @@ import UIKit
 
 protocol ItemDelegate : class {
     
-    //Delegate
-    weak var itemDelegate:ItemDelegate?{get}
 
     func itemSelected(item:AnyObject!)->Void
     
