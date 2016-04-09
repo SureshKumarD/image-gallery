@@ -10,17 +10,18 @@ import UIKit
 
 
 var networkManager = NetworkManager()
-public class NetworkManager: NSObject {
+class NetworkManager: NSObject {
     
     var objects : Array<AnyObject>
+    static let networkManager = NetworkManager()
     override init() {
         self.objects = []
     }
     class func sharedNetworkManager()-> NetworkManager! {
-        networkManager = NetworkManager()
         return networkManager
     }
     
+   
     
     func getAlbumWithId(albumID :String!, isWithCoverImage: Bool, completionHandler:()->Void) {
 

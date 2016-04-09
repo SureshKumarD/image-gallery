@@ -12,14 +12,11 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate, IMGSessionDelegate{
 
     var window: UIWindow?
-    var dataObject : DataManager!
-    public var networkObject : NetworkManager!
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        //Singleton classes to handle network related and data related functionalities.
-        self.instantiateCommonObjects()
         IMGSession.authenticatedSessionWithClientID(CLIENT_ID, secret: SECRET_KEY, authType: IMGAuthType.CodeAuth, withDelegate:self)
         
         return true
@@ -64,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, IMGSessionDelegate{
         if(pinCode.isEmpty) {
             let alertView = UIAlertView(title: "Error", message: "Access was denied by Imgur", delegate: self, cancelButtonTitle: "OK")
             alertView.show()
-            APP_DELEGATE_INSTANCE?.dataObject.startActivityIndicator()
+            DataManager.sharedDataManager().startActivityIndicator()
             return false;
         }
         IMGSession.sharedInstance().authenticateWithCode(pinCode)
@@ -72,8 +69,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, IMGSessionDelegate{
         //Default Hot Image Gallery being fetched...
 //        APP_DELEGATE_INSTANCE?.networkObject.getHotImageGallery(0, completionHandler: {})
     
-        self.networkObject.getuserImageGallery (0, sortViral: true, completionHandler: {
-            APP_DELEGATE_INSTANCE?.dataObject.stopActivityIndicator()
+        NetworkManager.sharedNetworkManager().getuserImageGallery (0, sortViral: true, completionHandler: {
+            DataManager.sharedDataManager().stopActivityIndicator()
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let homeVC = storyBoard.instantiateViewControllerWithIdentifier("HomeViewController")
             let navController = self.window?.rootViewController as! UINavigationController
@@ -85,12 +82,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, IMGSessionDelegate{
 
         
 
-    }
-    func instantiateCommonObjects() {
-        
-        self.dataObject      = DataManager.sharedDataManager()
-        self.networkObject   = NetworkManager.sharedNetworkManager()
-        
     }
     
     

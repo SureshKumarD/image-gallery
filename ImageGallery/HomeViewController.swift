@@ -51,12 +51,10 @@ class HomeViewController: UIViewController, ItemDelegate {
         NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: Selector("didFinishLayout"), object: nil)
         self.performSelector(Selector("didFinishLayout"), withObject: nil, afterDelay: 0)
     }
-    //MARK:- Methods
     
     
+    //MARK:- METHODS
     
-    
-    //MARK:-
     //MARK:- Initial setups
     func initializations () {
         
@@ -71,9 +69,14 @@ class HomeViewController: UIViewController, ItemDelegate {
         self.galleryCollectionView = GalleryCollectionView(frame: self.galleryTypeContainerView.bounds,    collectionViewLayout: flowLayout)
         self.galleryCollectionView.viewOption = self.galleryViewOption
         GalleryCollectionView.itemDelegate = self
-        self.galleryCollectionView.imageInfoArray = (APP_DELEGATE_INSTANCE?.networkObject.objects)!
+        self.galleryCollectionView.imageInfoArray = NetworkManager.sharedNetworkManager().objects
         self.galleryTypeContainerView.addSubview(galleryCollectionView)
         self.galleryViewOption = GalleryView.Grid
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor.clearColor()
+            
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.setNavigationLeftButton()
         self.setNavigationRightButton()
         self.changeGalleryView()
@@ -114,32 +117,43 @@ class HomeViewController: UIViewController, ItemDelegate {
             albumID = ""
         }
         
-        APP_DELEGATE_INSTANCE?.networkObject.getAlbumWithId(albumID, isWithCoverImage: true, completionHandler: { () -> Void in
+        NetworkManager.sharedNetworkManager().getAlbumWithId(albumID, isWithCoverImage: true, completionHandler: { () -> Void in
             
         })
     }
     
     //MARK:- NavigationBar
+    //Left Button...
     func setNavigationLeftButton() {
         
         if(self.navigationLeftButton == nil) {
-            self.navigationLeftButton = UIButton(type: UIButtonType.Custom)
+            self.navigationLeftButton = UIButton(type: UIButtonType.System)
         }
+        self.navigationLeftButton.setTitle("Viral", forState: UIControlState.Normal)
+        self.navigationLeftButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        self.navigationLeftButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 20)
         self.navigationLeftButton.frame = CGRectMake(0, 0, 50, 50)
-        self.leftBarButtonItem.customView = self.navigationRightButton
+        self.navigationLeftButton.imageEdgeInsets = UIEdgeInsetsMake(10,10,10,10)
+        self.navigationLeftButton.contentEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 10)
+        self.navigationLeftButton.imageView?.contentMode = UIViewContentMode.Center
+        self.navigationLeftButton.addTarget(self, action: Selector("fetchGalleyWithViralOption"), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        self.leftBarButtonItem.customView = self.navigationLeftButton
         self.navigationItem.leftBarButtonItem = self.leftBarButtonItem
         
-    
+        
 
     }
     
-    
+    //Right Button...
     func setNavigationRightButton() {
         if(self.navigationRightButton == nil) {
-            self.navigationRightButton = UIButton(type: UIButtonType.Custom)
+            self.navigationRightButton = UIButton(type: UIButtonType.System)
         }
         self.navigationRightButton.frame = CGRectMake(0, 0, 50, 50)
-        self.navigationRightButton.tintColor = UIColor.blackColor()
+        self.navigationRightButton.imageEdgeInsets = UIEdgeInsetsMake(10,10,10,10)
+        self.navigationRightButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, -10)
+        self.navigationRightButton.tintColor = UIColor.whiteColor()
         self.navigationRightButton.imageView?.contentMode = UIViewContentMode.Center
         self.navigationRightButton.addTarget(self, action: Selector("changeGalleryView"), forControlEvents: UIControlEvents.TouchUpInside)
         self.rightBarButtonItem.customView = self.navigationRightButton
@@ -147,6 +161,9 @@ class HomeViewController: UIViewController, ItemDelegate {
 
     }
     
+    
+    //MARK:- Navigation Bar Action
+    //Right button action handler...
     func changeGalleryView() {
         var image :UIImage!
         switch(self.galleryViewOption) {
@@ -175,8 +192,20 @@ class HomeViewController: UIViewController, ItemDelegate {
         
     }
     
+    //Left button action handler...
+    func fetchGalleyWithViralOption() {
+        DataManager.sharedDataManager().isViral = !DataManager.sharedDataManager().isViral
+        if(DataManager.sharedDataManager().isViral) {
+           self.navigationLeftButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        }else {
+            self.navigationLeftButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
+        }
     
     
+        
+    }
+    
+    //MARK:-
     
 
 }

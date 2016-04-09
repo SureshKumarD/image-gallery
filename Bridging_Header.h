@@ -19,6 +19,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import <AFNetworking/AFNetworking.h>
+#import <QuartzCore/QuartzCore.h>
 #import "Pods/SDWebImage/SDWebImage/UIImageView+WebCache.h"
 #import "ImageGallery/ImgurSession/IMGSession.h"
 #import "ImageGallery/ImgurSession/Requests/IMGGalleryRequest.h"

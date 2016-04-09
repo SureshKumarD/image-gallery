@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageGallery/NetworkManager.swift"
-            timestampString = "481815516.24362"
+            timestampString = "481889791.713497"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "getAlbumWithId(_:isWithCoverImage:completionHandler:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,27 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageGallery/HomeViewController.swift"
-            timestampString = "481818415.249442"
+            timestampString = "481893260.797876"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
-            landmarkName = "changeGalleryView()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ImageGallery/HomeViewController.swift"
-            timestampString = "481818198.00177"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "setNavigationRightButton()"
             landmarkType = "5">
          </BreakpointContent>

@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8EDF2DD1E23B02BB631E9E19 /* libPods-ImageGallery.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 212EA8A04FAFDC93A543150E /* libPods-ImageGallery.a */; };
+		F91BF5621CB909FC00879E29 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = F91BF5611CB909FC00879E29 /* placeholder.png */; };
 		F96702141CB58B3700E5759D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96702131CB58B3700E5759D /* DataManager.swift */; };
 		F96702161CB58B4F00E5759D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96702151CB58B4F00E5759D /* NetworkManager.swift */; };
 		F96702191CB5955300E5759D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96702181CB5955300E5759D /* Constants.swift */; };
-		F975648E1CB7F16F0074A7C5 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = F97564891CB7F16E0074A7C5 /* placeholder.png */; };
 		F975648F1CB7F16F0074A7C5 /* StaggeredGrid.png in Resources */ = {isa = PBXBuildFile; fileRef = F975648A1CB7F16E0074A7C5 /* StaggeredGrid.png */; };
 		F97564901CB7F16F0074A7C5 /* List.png in Resources */ = {isa = PBXBuildFile; fileRef = F975648B1CB7F16E0074A7C5 /* List.png */; };
 		F97564911CB7F16F0074A7C5 /* Grid.png in Resources */ = {isa = PBXBuildFile; fileRef = F975648C1CB7F16E0074A7C5 /* Grid.png */; };
@@ -83,11 +83,11 @@
 		212EA8A04FAFDC93A543150E /* libPods-ImageGallery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ImageGallery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		775BE9432AD52FB5162B97BC /* Pods-ImageGallery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageGallery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageGallery/Pods-ImageGallery.debug.xcconfig"; sourceTree = "<group>"; };
 		931DA09D4300928E5E8D8B36 /* Pods-ImageGallery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageGallery.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageGallery/Pods-ImageGallery.release.xcconfig"; sourceTree = "<group>"; };
+		F91BF5611CB909FC00879E29 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		F96702121CB5889A00E5759D /* Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging_Header.h; sourceTree = "<group>"; };
 		F96702131CB58B3700E5759D /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F96702151CB58B4F00E5759D /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F96702181CB5955300E5759D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		F97564891CB7F16E0074A7C5 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		F975648A1CB7F16E0074A7C5 /* StaggeredGrid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StaggeredGrid.png; sourceTree = "<group>"; };
 		F975648B1CB7F16E0074A7C5 /* List.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = List.png; sourceTree = "<group>"; };
 		F975648C1CB7F16E0074A7C5 /* Grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Grid.png; sourceTree = "<group>"; };
@@ -230,7 +230,7 @@
 		F97564881CB7F16E0074A7C5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				F97564891CB7F16E0074A7C5 /* placeholder.png */,
+				F91BF5611CB909FC00879E29 /* placeholder.png */,
 				F975648A1CB7F16E0074A7C5 /* StaggeredGrid.png */,
 				F975648B1CB7F16E0074A7C5 /* List.png */,
 				F975648C1CB7F16E0074A7C5 /* Grid.png */,
@@ -533,10 +533,10 @@
 				F992735A1CB456AD001CC471 /* GalleryTableViewCell.xib in Resources */,
 				F99273171CB422B0001CC471 /* LaunchScreen.storyboard in Resources */,
 				F992734B1CB425A2001CC471 /* GalleryCollectionView.xib in Resources */,
-				F975648E1CB7F16F0074A7C5 /* placeholder.png in Resources */,
 				F99273141CB422B0001CC471 /* Assets.xcassets in Resources */,
 				F97564901CB7F16F0074A7C5 /* List.png in Resources */,
 				F99273121CB422B0001CC471 /* Main.storyboard in Resources */,
+				F91BF5621CB909FC00879E29 /* placeholder.png in Resources */,
 				F97564911CB7F16F0074A7C5 /* Grid.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,17 +12,24 @@ import UIKit
 var dataManager = DataManager()
 
 class DataManager: NSObject {
+    
+    //SharedInstance...
+    static let dataManager = DataManager()
+    
     var galleryImages : [AnyObject]!
     var activityIndicator : UIActivityIndicatorView?
+    
+    var isViral: Bool
     override init() {
         
-        
+        self.isViral = true
     }
     class func sharedDataManager()-> DataManager! {
-        dataManager = DataManager()
         return dataManager
     }
     
+    
+    //MARK: - Acitivity Indicator - usage
     func startActivityIndicator() {
         if(self.activityIndicator == nil){
             self.activityIndicator  = UIActivityIndicatorView()

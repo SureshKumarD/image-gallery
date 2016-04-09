@@ -23,7 +23,7 @@ public class GalleryCollectionView: UICollectionView, UICollectionViewDataSource
         super.init(frame: frame, collectionViewLayout: layout)
         self.delegate = self
         self.dataSource = self
-        self.imageInfoArray = (APP_DELEGATE_INSTANCE?.networkObject.objects)!
+        self.imageInfoArray = NetworkManager.sharedNetworkManager().objects
         
     }
 
