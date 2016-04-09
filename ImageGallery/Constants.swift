@@ -8,6 +8,14 @@
 
 let APP_DELEGATE_INSTANCE = UIApplication.sharedApplication().delegate as? AppDelegate
 
+
+//Colors...
+let kBLACK_COLOR = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1.0)
+let kWHITE_COLOR = UIColor.whiteColor()
+
+//Border..
+let kTILE_BORDER = 5.0
+
 let BASE_URL  = "https://api.imgur.com/"
 let API_VERSION = "3"
 let CLIENT_ID = "ab7f22263dcb969"

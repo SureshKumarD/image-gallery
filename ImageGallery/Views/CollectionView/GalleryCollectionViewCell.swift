@@ -9,10 +9,18 @@
 import UIKit
 
 class GalleryCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var albumImageView: UIImageView!
+    @IBOutlet weak var albumTitleLabel: UILabel!
     
-    @IBOutlet weak var cellTitleLabel: UILabel!
-    @IBOutlet weak var cellImageView: UIImageView!
-    @IBOutlet weak var upLabel: UILabel!
-    @IBOutlet weak var downLabel: UILabel!
+    @IBOutlet weak var albumUpsLabel: UILabel!
+    @IBOutlet weak var albumDownsLabel: UILabel!
+    @IBOutlet weak var albumTitleLabelHeightConstraint: NSLayoutConstraint!
+    
+    override func awakeFromNib() {
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = 5.0
+        self.layer.borderColor = UIColor.grayColor().CGColor
+        self.contentView.backgroundColor = UIColor.clearColor()
+    }
     
 }

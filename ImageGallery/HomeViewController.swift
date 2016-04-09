@@ -14,9 +14,15 @@ class HomeViewController: UIViewController, ItemDelegate {
     @IBOutlet weak var galleryTypeSegmentControl: UISegmentedControl!
     @IBOutlet weak var galleryTypeContainerView: UIView!
     
-    //Local variables...
+    //CollectionView...
     var galleryCollectionView : GalleryCollectionView!
     var galleryViewOption : GalleryView!
+    var flowLayout : UICollectionViewFlowLayout!
+
+    
+    //TableView...
+    var galleryTableView : GalleryTableView!
+    
     
     //Navigation Items...
     var leftBarButtonItem : UIBarButtonItem!
@@ -58,38 +64,76 @@ class HomeViewController: UIViewController, ItemDelegate {
     //MARK:- Initial setups
     func initializations () {
         
+        //Collection & Table Views
+        self.collectionViewDefaultSettings()
+        self.tableViewDefaultSettings()
+        
+        
         //Navigation Bar
         self.leftBarButtonItem = UIBarButtonItem()
         self.rightBarButtonItem = UIBarButtonItem()
+        self.navigationBarDefaultSettings()
         
-        //CollectionView...
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.minimumInteritemSpacing = 0
-
-        self.galleryCollectionView = GalleryCollectionView(frame: self.galleryTypeContainerView.bounds,    collectionViewLayout: flowLayout)
-        self.galleryCollectionView.viewOption = self.galleryViewOption
-        GalleryCollectionView.itemDelegate = self
-        self.galleryCollectionView.imageInfoArray = NetworkManager.sharedNetworkManager().objects
-        self.galleryTypeContainerView.addSubview(galleryCollectionView)
-        self.galleryViewOption = GalleryView.Grid
-        
+    }
+    
+    //Do Navigation bar initial settings...
+    func  navigationBarDefaultSettings() {
         self.navigationController?.navigationBar.barTintColor = UIColor.clearColor()
-            
+        
         self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationController?.navigationBar.translucent = false
         self.setNavigationLeftButton()
         self.setNavigationRightButton()
         self.changeGalleryView()
-       
 
     }
+    
+    
+    //CollectionView initial settings... 
+    func collectionViewDefaultSettings() {
+        //CollectionView...
+        self.flowLayout  = UICollectionViewFlowLayout()
+        self.flowLayout.minimumInteritemSpacing = 2.5
+        self.flowLayout.minimumLineSpacing = 5
+        var frame = self.galleryTypeContainerView.bounds as CGRect
+        frame.origin.x = 5
+        frame.origin.y = 5
+        frame.size.width -= 100
+        frame.size.height -= 100
+        
+        
+        self.galleryCollectionView = GalleryCollectionView(frame: frame, collectionViewLayout: flowLayout)
+        self.galleryCollectionView.viewOption = self.galleryViewOption
+        GalleryCollectionView.itemDelegate = self
+        self.galleryCollectionView.imageInfoArray = DataManager.sharedDataManager().objects
+        self.galleryTypeContainerView.addSubview(self.galleryCollectionView)
+        self.galleryViewOption = GalleryView.Grid
+    }
 
+    
+    // TableView initial settings...
+    func tableViewDefaultSettings() {
+        var frame = self.galleryTypeContainerView.bounds as CGRect
+        frame.origin.x = 5
+        frame.origin.y = 5
+        frame.size.width -= 10
+        frame.size.height -= 10
+        self.galleryTableView = GalleryTableView(frame: frame, style: UITableViewStyle.Plain)
+        GalleryTableView.itemDelegate = self
+        self.galleryTableView.imageInfoArray = DataManager.sharedDataManager().objects
+        self.galleryTypeContainerView.addSubview(self.galleryTableView)
+        self.galleryTableView.hidden = true
+    }
+    
+    //Register CollectionView Nib
     func registerAllNibs() {
        
         self.galleryCollectionView.registerNib(UINib.init(nibName: "GalleryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier:"GalleryCollectionViewCell")
         
     }
     
+    //Handler when view did finish layout...
     func didFinishLayout() {
         self.galleryCollectionView.frame = self.galleryTypeContainerView.bounds
 
@@ -117,7 +161,7 @@ class HomeViewController: UIViewController, ItemDelegate {
             albumID = ""
         }
         
-        NetworkManager.sharedNetworkManager().getAlbumWithId(albumID, isWithCoverImage: true, completionHandler: { () -> Void in
+        NetworkManager.getAlbumWithId(albumID, isWithCoverImage: true, completionHandler: { () -> Void in
             
         })
     }
@@ -171,17 +215,20 @@ class HomeViewController: UIViewController, ItemDelegate {
         case GalleryView.Staggered? :
             self.galleryViewOption = GalleryView.List
             image = UIImage(named: "List")
+            self.changeViewOptionToList()
             break
             
             
         case GalleryView.List?:
             self.galleryViewOption = GalleryView.Grid
              image = UIImage(named: "Grid")
+            self.changeViewOptionToGrid()
             break
        
         case GalleryView.Grid? :
             self.galleryViewOption = GalleryView.Staggered
             image = UIImage(named: "StaggeredGrid")
+            self.changeViewOptionToStaggeredGrid()
             break
         default:
             break
@@ -205,7 +252,34 @@ class HomeViewController: UIViewController, ItemDelegate {
         
     }
     
-    //MARK:-
+    
+    
+    //MARK:- Change view option
+    //To Grid View
+    func changeViewOptionToGrid() {
+        self.galleryCollectionView.hidden = false
+        self.galleryTableView.hidden = true
+        self.flowLayout.minimumInteritemSpacing = 5
+        self.galleryCollectionView.viewOption = GalleryView.Grid
+        self.galleryCollectionView.reloadData()
+    }
+    
+    //To Staggered Grid
+    func changeViewOptionToStaggeredGrid() {
+        self.galleryCollectionView.hidden = false
+        self.galleryTableView.hidden = true
+        self.flowLayout.minimumInteritemSpacing = 0
+        self.galleryCollectionView.viewOption = GalleryView.Staggered
+        self.galleryCollectionView.reloadData()
+    }
+
+    //To List View
+    func changeViewOptionToList() {
+        self.galleryCollectionView.hidden = true
+        self.galleryTableView.hidden = false
+        
+        self.galleryTableView.reloadData()
+    }
     
 
 }

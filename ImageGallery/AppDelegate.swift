@@ -67,9 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, IMGSessionDelegate{
         IMGSession.sharedInstance().authenticateWithCode(pinCode)
         
         //Default Hot Image Gallery being fetched...
-//        APP_DELEGATE_INSTANCE?.networkObject.getHotImageGallery(0, completionHandler: {})
-    
-        NetworkManager.sharedNetworkManager().getuserImageGallery (0, sortViral: true, completionHandler: {
+        NetworkManager.getuserImageGallery (0, sortViral: true, completionHandler: {
             DataManager.sharedDataManager().stopActivityIndicator()
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let homeVC = storyBoard.instantiateViewControllerWithIdentifier("HomeViewController")

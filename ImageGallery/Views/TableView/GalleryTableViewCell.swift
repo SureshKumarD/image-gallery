@@ -9,10 +9,20 @@
 import UIKit
 
 class GalleryTableViewCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var albumImageView: UIImageView!
 
+    @IBOutlet weak var albumTitleLabel: UILabel!
+    @IBOutlet weak var albumUpsLabel: UILabel!
+    @IBOutlet weak var albumDownsLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.containerView.layer.masksToBounds = true
+        self.containerView.layer.cornerRadius = 5.0
+        self.containerView.layer.borderColor = UIColor.grayColor().CGColor
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

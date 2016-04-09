@@ -28,6 +28,6 @@ class LoginViewController: UIViewController {
     
     func proceedLogin() {
         DataManager.sharedDataManager().startActivityIndicator()
-        NetworkManager.sharedNetworkManager().getHotImageGallery(0, sortViral: true, completionHandler: {})
+        NetworkManager.getHotImageGallery(0, sortViral: true, completionHandler: {})
     }
 }

@@ -8,22 +8,9 @@
 
 import UIKit
 
-
-var networkManager = NetworkManager()
 class NetworkManager: NSObject {
     
-    var objects : Array<AnyObject>
-    static let networkManager = NetworkManager()
-    override init() {
-        self.objects = []
-    }
-    class func sharedNetworkManager()-> NetworkManager! {
-        return networkManager
-    }
-    
-   
-    
-    func getAlbumWithId(albumID :String!, isWithCoverImage: Bool, completionHandler:()->Void) {
+    class func getAlbumWithId(albumID :String!, isWithCoverImage: Bool, completionHandler:()->Void) {
 
         IMGGalleryRequest.albumWithID(albumID, withCoverImage:isWithCoverImage , success:{(album : IMGGalleryAlbum!) -> Void in
             print(album)
@@ -35,7 +22,7 @@ class NetworkManager: NSObject {
 
     //MARK:- Get Image Gallery from sections Hot, Top, User...
     
-    func getHotImageGallery(page : Int, sortViral: Bool, completionHandler:()->Void) {
+    class func getHotImageGallery(page : Int, sortViral: Bool, completionHandler:()->Void) {
         IMGGalleryRequest.hotGalleryPage(page, withViralSort: sortViral, success: { (objects :[AnyObject]!) -> Void in
             self.filterAlbums(objects)
             completionHandler()
@@ -45,7 +32,7 @@ class NetworkManager: NSObject {
     }
     
         
-    func getTopImageGallery(page : Int, sortViral : Bool, completionHandler:()->Void) {
+    class func getTopImageGallery(page : Int, sortViral : Bool, completionHandler:()->Void) {
         
         IMGGalleryRequest.topGalleryPage(page, withWindow:IMGTopGalleryWindow.All , withViralSort: true, success: { (objects :[AnyObject]!) -> Void in
             self.filterAlbums(objects)
@@ -58,7 +45,7 @@ class NetworkManager: NSObject {
     }
     
         
-    func getuserImageGallery(page : Int,  sortViral : Bool, completionHandler:()->Void) {
+    class func getuserImageGallery(page : Int,  sortViral : Bool, completionHandler:()->Void) {
         
         IMGGalleryRequest.userGalleryPage(page, withViralSort: true, showViral: true, success: { (objects:[AnyObject]!) -> Void in
             self.filterAlbums(objects)
@@ -71,10 +58,10 @@ class NetworkManager: NSObject {
     }
     
     
-    func filterAlbums(objects :[AnyObject!]) {
+    class func filterAlbums(objects :[AnyObject!]) {
         for object in objects {
             if(object.isKindOfClass(IMGGalleryAlbum)) {
-                self.objects.append(object)
+                DataManager.sharedDataManager().objects.append(object)
             }
         }
     }

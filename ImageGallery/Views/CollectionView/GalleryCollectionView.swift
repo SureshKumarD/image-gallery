@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 public class GalleryCollectionView: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
 
@@ -18,12 +19,15 @@ public class GalleryCollectionView: UICollectionView, UICollectionViewDataSource
     //Delegate to pass data
     static var itemDelegate : ItemDelegate!
     
+    
+    
     var viewOption : GalleryView!
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         self.delegate = self
         self.dataSource = self
-        self.imageInfoArray = NetworkManager.sharedNetworkManager().objects
+        self.imageInfoArray = DataManager.sharedDataManager().objects
+        self.viewOption = GalleryView.Staggered
         
     }
 
@@ -41,10 +45,6 @@ public class GalleryCollectionView: UICollectionView, UICollectionViewDataSource
     }
     public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GalleryCollectionViewCell", forIndexPath: indexPath) as! GalleryCollectionViewCell
-        cell.layer.cornerRadius = 1.0
-        cell.layer.borderColor = UIColor.grayColor().CGColor
-//        cell.backgroundColor = UIColor.whiteColor()
-        cell.contentView.backgroundColor = UIColor.clearColor()
         
         let object = self.imageInfoArray[indexPath.row]
         let coverImage = object.coverImage() as IMGImage
@@ -55,13 +55,10 @@ public class GalleryCollectionView: UICollectionView, UICollectionViewDataSource
             url = coverImage.URLWithSize(IMGSize.SmallThumbnailSize) as NSURL
         }
        
-        cell.cellTitleLabel.text = coverImage.title
-       
-        cell.cellImageView.sd_setImageWithURL(url, placeholderImage: UIImage(named: "placeholder"), options: SDWebImageOptions.CacheMemoryOnly)
-//        cell.cellImageView.sd_setImageWithURL(url, placeholderImage: UIImage(named: "placeholder"))
-        cell.upLabel.text = SYMBOL_UP_ARROW+"\(object.ups)"
-        cell.downLabel.text = SYMBOL_DOWN_ARROW+"\(object.downs)"
-//
+        cell.albumTitleLabel.text = object.valueForKey("title") as? String
+        cell.albumImageView.sd_setImageWithURL(url, placeholderImage: UIImage(named: "placeholder"), options: SDWebImageOptions.CacheMemoryOnly)
+        cell.albumUpsLabel.text = SYMBOL_UP_ARROW+"\(object.ups)"
+        cell.albumDownsLabel.text = SYMBOL_DOWN_ARROW+"\(object.downs)"
         return cell
     }
 
@@ -73,9 +70,9 @@ public class GalleryCollectionView: UICollectionView, UICollectionViewDataSource
     public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
         if(self.viewOption == GalleryView.Grid) {
-            return CGSizeMake(WIDTH_WINDOW_FRAME - 10, 230)
+            return CGSizeMake(WIDTH_WINDOW_FRAME - 20, 230)
         }else {
-            return CGSizeMake(WIDTH_WINDOW_FRAME/2, 230)
+            return CGSizeMake((WIDTH_WINDOW_FRAME/2) - 2.5, 230)
         }
     }
 //    
