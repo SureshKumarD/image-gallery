@@ -63,7 +63,7 @@ class HomeViewController: UIViewController, ItemDelegate {
     
     //MARK:- Initial setups
     func initializations () {
-        
+    
         //Collection & Table Views
         self.collectionViewDefaultSettings()
         self.tableViewDefaultSettings()
@@ -96,14 +96,8 @@ class HomeViewController: UIViewController, ItemDelegate {
         self.flowLayout  = UICollectionViewFlowLayout()
         self.flowLayout.minimumInteritemSpacing = 2.5
         self.flowLayout.minimumLineSpacing = 5
-        var frame = self.galleryTypeContainerView.bounds as CGRect
-        frame.origin.x = 5
-        frame.origin.y = 5
-        frame.size.width -= 100
-        frame.size.height -= 100
         
-        
-        self.galleryCollectionView = GalleryCollectionView(frame: frame, collectionViewLayout: flowLayout)
+        self.galleryCollectionView = GalleryCollectionView(frame: self.galleryTypeContainerView.bounds , collectionViewLayout: flowLayout)
         self.galleryCollectionView.viewOption = self.galleryViewOption
         GalleryCollectionView.itemDelegate = self
         self.galleryCollectionView.imageInfoArray = DataManager.sharedDataManager().objects
@@ -114,12 +108,8 @@ class HomeViewController: UIViewController, ItemDelegate {
     
     // TableView initial settings...
     func tableViewDefaultSettings() {
-        var frame = self.galleryTypeContainerView.bounds as CGRect
-        frame.origin.x = 5
-        frame.origin.y = 5
-        frame.size.width -= 10
-        frame.size.height -= 10
-        self.galleryTableView = GalleryTableView(frame: frame, style: UITableViewStyle.Plain)
+        
+        self.galleryTableView = GalleryTableView(frame: self.galleryTypeContainerView.bounds , style: UITableViewStyle.Plain)
         GalleryTableView.itemDelegate = self
         self.galleryTableView.imageInfoArray = DataManager.sharedDataManager().objects
         self.galleryTypeContainerView.addSubview(self.galleryTableView)
@@ -136,6 +126,7 @@ class HomeViewController: UIViewController, ItemDelegate {
     //Handler when view did finish layout...
     func didFinishLayout() {
         self.galleryCollectionView.frame = self.galleryTypeContainerView.bounds
+        self.galleryTableView.frame = self.galleryTypeContainerView.bounds
 
     }
     
@@ -154,16 +145,33 @@ class HomeViewController: UIViewController, ItemDelegate {
     
     //MARK:- Item Selected Delegate
     func itemSelected(item: AnyObject!) {
-        var albumID : String!
-        if(item.isKindOfClass(IMGGalleryAlbum)) {
-            albumID = item.albumID as String
-        }else {
-            albumID = ""
-        }
         
-        NetworkManager.getAlbumWithId(albumID, isWithCoverImage: true, completionHandler: { () -> Void in
+        self.view.userInteractionEnabled = false
+        DataManager.sharedDataManager().startActivityIndicator()
+        let albumID = item.albumID as String
+        let urlString = "/"+API_VERSION+"/"+URL_FRAGMENT_ALBUM+"/"+albumID
+        NetworkManager.getAlbumImages(urlString, success: { (imagesObjectDictionary : [String : AnyObject]?) -> Void in
             
-        })
+            
+            DataManager.sharedDataManager().stopActivityIndicator()
+//            self.view.userInteractionEnabled = true
+            self.openDetailViewController()
+//            self.openDetailViewController(imagesObjectDictionary!["data"] as! [AnyObject]!)
+            }) { (error: NSError) -> Void in
+                
+            self.view.userInteractionEnabled = true
+            DataManager.sharedDataManager().stopActivityIndicator()
+        }
+    }
+    
+    func openDetailViewController() {
+//    func openDetailViewController(imagesArray : [AnyObject]) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let detailVC = storyBoard.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
+//        detailVC.imagesArray = imagesArray
+        
+        self.navigationController?.pushViewController(detailVC, animated: false)
+
     }
     
     //MARK:- NavigationBar
@@ -195,7 +203,7 @@ class HomeViewController: UIViewController, ItemDelegate {
             self.navigationRightButton = UIButton(type: UIButtonType.System)
         }
         self.navigationRightButton.frame = CGRectMake(0, 0, 50, 50)
-        self.navigationRightButton.imageEdgeInsets = UIEdgeInsetsMake(10,10,10,10)
+        self.navigationRightButton.imageEdgeInsets = UIEdgeInsetsMake(12,12,12,12)
         self.navigationRightButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, -10)
         self.navigationRightButton.tintColor = UIColor.whiteColor()
         self.navigationRightButton.imageView?.contentMode = UIViewContentMode.Center
@@ -247,13 +255,10 @@ class HomeViewController: UIViewController, ItemDelegate {
         }else {
             self.navigationLeftButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
         }
-    
-    
         
     }
     
-    
-    
+
     //MARK:- Change view option
     //To Grid View
     func changeViewOptionToGrid() {

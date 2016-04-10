@@ -16,8 +16,9 @@ let kWHITE_COLOR = UIColor.whiteColor()
 //Border..
 let kTILE_BORDER = 5.0
 
-let BASE_URL  = "https://api.imgur.com/"
+let URL_BASE  = "https://api.imgur.com"
 let API_VERSION = "3"
+let URL_FRAGMENT_ALBUM = "album"
 let CLIENT_ID = "ab7f22263dcb969"
 let SECRET_KEY = "b2c92fc39d76006783333701b70e9b02ae9ae0b4"
 let WIDTH_WINDOW_FRAME =  UIScreen.mainScreen().bounds.size.width

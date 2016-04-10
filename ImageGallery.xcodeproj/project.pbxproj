@@ -12,7 +12,6 @@
 		F96702141CB58B3700E5759D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96702131CB58B3700E5759D /* DataManager.swift */; };
 		F96702161CB58B4F00E5759D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96702151CB58B4F00E5759D /* NetworkManager.swift */; };
 		F96702191CB5955300E5759D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96702181CB5955300E5759D /* Constants.swift */; };
-		F975648F1CB7F16F0074A7C5 /* StaggeredGrid.png in Resources */ = {isa = PBXBuildFile; fileRef = F975648A1CB7F16E0074A7C5 /* StaggeredGrid.png */; };
 		F97564901CB7F16F0074A7C5 /* List.png in Resources */ = {isa = PBXBuildFile; fileRef = F975648B1CB7F16E0074A7C5 /* List.png */; };
 		F97564911CB7F16F0074A7C5 /* Grid.png in Resources */ = {isa = PBXBuildFile; fileRef = F975648C1CB7F16E0074A7C5 /* Grid.png */; };
 		F97F68631CB6815A00467943 /* IMGResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = F97F68271CB6815A00467943 /* IMGResponseSerializer.m */; };
@@ -57,6 +56,9 @@
 		F99273591CB456AD001CC471 /* GalleryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99273571CB456AD001CC471 /* GalleryTableViewCell.swift */; };
 		F992735A1CB456AD001CC471 /* GalleryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99273581CB456AD001CC471 /* GalleryTableViewCell.xib */; };
 		F992735C1CB456FA001CC471 /* GalleryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F992735B1CB456FA001CC471 /* GalleryTableView.swift */; };
+		F9A840451CB97358005D6706 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A840441CB97358005D6706 /* DetailViewController.swift */; };
+		F9A8404D1CB973A7005D6706 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A8404C1CB973A7005D6706 /* iCarousel.m */; };
+		F9A8404F1CBA2D03005D6706 /* StaggeredGrid.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A8404E1CBA2D03005D6706 /* StaggeredGrid.png */; };
 		F9EEF7B51CB6C68500DEFBE6 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EEF7B41CB6C68500DEFBE6 /* Protocols.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,7 +88,6 @@
 		F96702131CB58B3700E5759D /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F96702151CB58B4F00E5759D /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F96702181CB5955300E5759D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		F975648A1CB7F16E0074A7C5 /* StaggeredGrid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StaggeredGrid.png; sourceTree = "<group>"; };
 		F975648B1CB7F16E0074A7C5 /* List.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = List.png; sourceTree = "<group>"; };
 		F975648C1CB7F16E0074A7C5 /* Grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Grid.png; sourceTree = "<group>"; };
 		F97F68261CB6815A00467943 /* IMGResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMGResponseSerializer.h; sourceTree = "<group>"; };
@@ -168,6 +169,12 @@
 		F99273571CB456AD001CC471 /* GalleryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryTableViewCell.swift; sourceTree = "<group>"; };
 		F99273581CB456AD001CC471 /* GalleryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GalleryTableViewCell.xib; sourceTree = "<group>"; };
 		F992735B1CB456FA001CC471 /* GalleryTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryTableView.swift; sourceTree = "<group>"; };
+		F9A840441CB97358005D6706 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F9A840471CB97397005D6706 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		F9A840481CB97397005D6706 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		F9A8404B1CB973A7005D6706 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		F9A8404C1CB973A7005D6706 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		F9A8404E1CBA2D03005D6706 /* StaggeredGrid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StaggeredGrid.png; sourceTree = "<group>"; };
 		F9EEF7B41CB6C68500DEFBE6 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,8 +234,8 @@
 			isa = PBXGroup;
 			children = (
 				F91BF5611CB909FC00879E29 /* placeholder.png */,
-				F975648A1CB7F16E0074A7C5 /* StaggeredGrid.png */,
 				F975648B1CB7F16E0074A7C5 /* List.png */,
+				F9A8404E1CBA2D03005D6706 /* StaggeredGrid.png */,
 				F975648C1CB7F16E0074A7C5 /* Grid.png */,
 			);
 			path = Images;
@@ -244,6 +251,7 @@
 		F97F68251CB6815A00467943 /* ImgurSession */ = {
 			isa = PBXGroup;
 			children = (
+				F9A840461CB97397005D6706 /* iCarousel */,
 				F97F68261CB6815A00467943 /* IMGResponseSerializer.h */,
 				F97F68271CB6815A00467943 /* IMGResponseSerializer.m */,
 				F97F68281CB6815A00467943 /* IMGSession.h */,
@@ -350,8 +358,10 @@
 			isa = PBXGroup;
 			children = (
 				F97F68251CB6815A00467943 /* ImgurSession */,
+				F9A8404A1CB973A7005D6706 /* iCarousel */,
 				F992730C1CB422B0001CC471 /* AppDelegate.swift */,
 				F992730E1CB422B0001CC471 /* HomeViewController.swift */,
+				F9A840441CB97358005D6706 /* DetailViewController.swift */,
 				F96702131CB58B3700E5759D /* DataManager.swift */,
 				F96702151CB58B4F00E5759D /* NetworkManager.swift */,
 				F96702181CB5955300E5759D /* Constants.swift */,
@@ -412,6 +422,24 @@
 				F99273581CB456AD001CC471 /* GalleryTableViewCell.xib */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		F9A840461CB97397005D6706 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				F9A840471CB97397005D6706 /* iCarousel.h */,
+				F9A840481CB97397005D6706 /* iCarousel.m */,
+			);
+			path = iCarousel;
+			sourceTree = "<group>";
+		};
+		F9A8404A1CB973A7005D6706 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				F9A8404B1CB973A7005D6706 /* iCarousel.h */,
+				F9A8404C1CB973A7005D6706 /* iCarousel.m */,
+			);
+			path = iCarousel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,13 +549,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F975648F1CB7F16F0074A7C5 /* StaggeredGrid.png in Resources */,
 				F992734F1CB44502001CC471 /* GalleryCollectionViewCell.xib in Resources */,
 				F992735A1CB456AD001CC471 /* GalleryTableViewCell.xib in Resources */,
 				F99273171CB422B0001CC471 /* LaunchScreen.storyboard in Resources */,
 				F99273141CB422B0001CC471 /* Assets.xcassets in Resources */,
 				F97564901CB7F16F0074A7C5 /* List.png in Resources */,
 				F99273121CB422B0001CC471 /* Main.storyboard in Resources */,
+				F9A8404F1CBA2D03005D6706 /* StaggeredGrid.png in Resources */,
 				F91BF5621CB909FC00879E29 /* placeholder.png in Resources */,
 				F97564911CB7F16F0074A7C5 /* Grid.png in Resources */,
 			);
@@ -609,6 +637,7 @@
 				F97F68711CB6815A00467943 /* IMGModel.m in Sources */,
 				F992735C1CB456FA001CC471 /* GalleryTableView.swift in Sources */,
 				F97F686E1CB6815A00467943 /* IMGImage.m in Sources */,
+				F9A840451CB97358005D6706 /* DetailViewController.swift in Sources */,
 				F992734A1CB425A2001CC471 /* GalleryCollectionView.swift in Sources */,
 				F99273511CB4451F001CC471 /* GalleryCollectionViewCell.swift in Sources */,
 				F9EEF7B51CB6C68500DEFBE6 /* Protocols.swift in Sources */,
@@ -634,6 +663,7 @@
 				F97F68751CB6815A00467943 /* NSError+IMGError.m in Sources */,
 				F97F686D1CB6815A00467943 /* IMGGalleryProfile.m in Sources */,
 				F97F687A1CB6815A00467943 /* IMGEndpoint.m in Sources */,
+				F9A8404D1CB973A7005D6706 /* iCarousel.m in Sources */,
 				F97F687B1CB6815A00467943 /* IMGGalleryRequest.m in Sources */,
 				F97F687D1CB6815A00467943 /* IMGMemeGen.m in Sources */,
 				F97F68631CB6815A00467943 /* IMGResponseSerializer.m in Sources */,

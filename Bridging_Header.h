@@ -15,12 +15,14 @@
 
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <Security/Security.h>
-
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <CoreGraphics/CoreGraphics.h>
-#import <AFNetworking/AFNetworking.h>
 #import <QuartzCore/QuartzCore.h>
+
+#import <AFNetworking/AFNetworking.h>
 #import "Pods/SDWebImage/SDWebImage/UIImageView+WebCache.h"
+
+//Imgur api library
 #import "ImageGallery/ImgurSession/IMGSession.h"
 #import "ImageGallery/ImgurSession/Requests/IMGGalleryRequest.h"
 #import "ImageGallery/ImgurSession/Models/IMGGalleryImage.h"
@@ -28,5 +30,7 @@
 #import "ImageGallery/ImgurSession/Models/IMGBasicAlbum.h"
 #import "ImageGallery/ImgurSession/Models/IMGGalleryAlbum.h"
 
+//Carousel library
+#import "ImageGallery/iCarousel/iCarousel.h"
 
 #endif /* Bridging_Header_h */

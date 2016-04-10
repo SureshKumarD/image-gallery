@@ -50,9 +50,9 @@ public class GalleryCollectionView: UICollectionView, UICollectionViewDataSource
         let coverImage = object.coverImage() as IMGImage
         var url : NSURL!
         if(self.viewOption == GalleryView.Grid) {
-            url = coverImage.URLWithSize(IMGSize.LargeThumbnailSize) as NSURL
+            url = coverImage.URLWithSize(IMGSize.SmallSquareSize) as NSURL
         }else {
-            url = coverImage.URLWithSize(IMGSize.SmallThumbnailSize) as NSURL
+            url = coverImage.URLWithSize(IMGSize.BigSquareSize) as NSURL
         }
        
         cell.albumTitleLabel.text = object.valueForKey("title") as? String

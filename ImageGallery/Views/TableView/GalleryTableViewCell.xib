@@ -50,18 +50,18 @@
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="C0k-mO-4cY" firstAttribute="top" secondItem="ZTZ-VK-Ued" secondAttribute="top" id="3sO-Fr-K8r"/>
-                            <constraint firstAttribute="bottom" secondItem="gJX-jk-mmd" secondAttribute="bottom" id="4rh-Dm-jmi"/>
-                            <constraint firstItem="C0k-mO-4cY" firstAttribute="leading" secondItem="ZTZ-VK-Ued" secondAttribute="leading" id="759-A8-2Tq"/>
-                            <constraint firstAttribute="bottom" secondItem="C0k-mO-4cY" secondAttribute="bottom" id="AVw-NG-0He"/>
+                            <constraint firstAttribute="bottom" secondItem="ykx-oc-eDR" secondAttribute="bottom" id="13r-1I-LSi"/>
+                            <constraint firstItem="ew0-HW-7QF" firstAttribute="top" secondItem="ZTZ-VK-Ued" secondAttribute="top" id="A6M-4T-KNt"/>
                             <constraint firstItem="ykx-oc-eDR" firstAttribute="top" secondItem="ew0-HW-7QF" secondAttribute="bottom" id="CgP-Pr-PYl"/>
                             <constraint firstItem="ykx-oc-eDR" firstAttribute="width" secondItem="gJX-jk-mmd" secondAttribute="width" id="Fje-S3-p7c"/>
+                            <constraint firstItem="C0k-mO-4cY" firstAttribute="leading" secondItem="ZTZ-VK-Ued" secondAttribute="leading" id="HIp-XO-Lgx"/>
                             <constraint firstItem="gJX-jk-mmd" firstAttribute="leading" secondItem="C0k-mO-4cY" secondAttribute="trailing" constant="5" id="JsK-0t-3wE"/>
-                            <constraint firstItem="ew0-HW-7QF" firstAttribute="top" secondItem="ZTZ-VK-Ued" secondAttribute="top" id="Tqb-wS-xlM"/>
-                            <constraint firstAttribute="bottom" secondItem="ykx-oc-eDR" secondAttribute="bottom" id="e9w-DX-AEL"/>
-                            <constraint firstAttribute="trailing" secondItem="ew0-HW-7QF" secondAttribute="trailing" id="j3W-r1-QC3"/>
+                            <constraint firstAttribute="trailing" secondItem="ew0-HW-7QF" secondAttribute="trailing" id="KWJ-Ma-dcu"/>
+                            <constraint firstAttribute="bottom" secondItem="C0k-mO-4cY" secondAttribute="bottom" id="U6Z-py-Mbi"/>
                             <constraint firstItem="ykx-oc-eDR" firstAttribute="leading" secondItem="gJX-jk-mmd" secondAttribute="trailing" constant="1" id="jZF-xb-gM4"/>
-                            <constraint firstAttribute="trailing" secondItem="ykx-oc-eDR" secondAttribute="trailing" id="nDD-U9-Piq"/>
+                            <constraint firstAttribute="trailing" secondItem="ykx-oc-eDR" secondAttribute="trailing" id="tIo-dA-pVz"/>
+                            <constraint firstAttribute="bottom" secondItem="gJX-jk-mmd" secondAttribute="bottom" id="teX-kH-OH4"/>
+                            <constraint firstItem="C0k-mO-4cY" firstAttribute="top" secondItem="ZTZ-VK-Ued" secondAttribute="top" id="vkA-W6-Rqd"/>
                             <constraint firstItem="ykx-oc-eDR" firstAttribute="top" secondItem="ew0-HW-7QF" secondAttribute="bottom" id="xXA-hL-wk5"/>
                             <constraint firstItem="ew0-HW-7QF" firstAttribute="leading" secondItem="C0k-mO-4cY" secondAttribute="trailing" constant="5" id="xwe-I8-i3v"/>
                         </constraints>
@@ -69,10 +69,10 @@
                 </subviews>
                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="ZTZ-VK-Ued" secondAttribute="bottom" constant="4.5" id="7C6-JS-myZ"/>
-                    <constraint firstItem="ZTZ-VK-Ued" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="DyN-hh-50a"/>
-                    <constraint firstAttribute="trailing" secondItem="ZTZ-VK-Ued" secondAttribute="trailing" constant="5" id="MPS-nb-W0D"/>
-                    <constraint firstItem="ZTZ-VK-Ued" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="aZP-U1-GLu"/>
+                    <constraint firstItem="ZTZ-VK-Ued" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="2MF-Ty-kTN"/>
+                    <constraint firstAttribute="trailing" secondItem="ZTZ-VK-Ued" secondAttribute="trailing" constant="5" id="Sbb-Yf-xYj"/>
+                    <constraint firstAttribute="bottom" secondItem="ZTZ-VK-Ued" secondAttribute="bottom" constant="4.5" id="XLI-1Y-F70"/>
+                    <constraint firstItem="ZTZ-VK-Ued" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="hOc-aJ-vFk"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

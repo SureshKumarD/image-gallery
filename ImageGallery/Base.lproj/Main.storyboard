@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="1716" y="-371"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="Cjq-Je-0xv">
             <objects>
-                <viewController id="Xot-2k-F5S" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="Xot-2k-F5S" customClass="DetailViewController" customModule="ImageGallery" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zcM-st-BP2"/>
                         <viewControllerLayoutGuide type="bottom" id="C1p-Ei-JHI"/>
@@ -51,9 +51,24 @@
                     <view key="view" contentMode="scaleToFill" id="HQA-Fh-DGE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T8Z-pU-96H" customClass="iCarousel">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="T8Z-pU-96H" secondAttribute="trailing" id="NAI-mO-DHZ"/>
+                            <constraint firstItem="T8Z-pU-96H" firstAttribute="leading" secondItem="HQA-Fh-DGE" secondAttribute="leading" id="apG-5p-Yfw"/>
+                            <constraint firstItem="C1p-Ei-JHI" firstAttribute="top" secondItem="T8Z-pU-96H" secondAttribute="bottom" id="eGw-J3-Ohy"/>
+                            <constraint firstItem="T8Z-pU-96H" firstAttribute="top" secondItem="HQA-Fh-DGE" secondAttribute="top" id="thC-hA-hNN"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="carousel" destination="T8Z-pU-96H" id="6z5-WB-0g6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N6K-iz-lAy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

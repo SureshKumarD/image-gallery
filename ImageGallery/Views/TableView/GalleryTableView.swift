@@ -58,7 +58,6 @@ class GalleryTableView: UITableView, UITableViewDataSource, UITableViewDelegate 
         cell?.albumImageView.sd_setImageWithURL(url, placeholderImage: UIImage(named: "placeholder"), options: SDWebImageOptions.CacheMemoryOnly)
         cell?.albumUpsLabel.text = SYMBOL_UP_ARROW+"\(object.ups)"
         cell?.albumDownsLabel.text = SYMBOL_DOWN_ARROW+"\(object.downs)"
-        //
         return cell!
 
     }
