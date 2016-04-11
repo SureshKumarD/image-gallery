@@ -232,6 +232,9 @@ class HomeViewController: UIViewController, AlbumDelegate, MenuDelegate {
                 break
                 
             }
+            
+            // Server call optimization, do not call the server,
+            // If already on the same parameter search
             if(!isAlreadyOnSameCategory) {
                 self.resetAlbumObjects()
                 self.fetchAlbums()
