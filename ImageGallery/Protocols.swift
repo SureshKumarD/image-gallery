@@ -8,10 +8,14 @@
 
 import UIKit
 
-protocol ItemDelegate : class {
+protocol AlbumDelegate : class {
     
 
-    func itemSelected(item:AnyObject!)->Void
+    func albumSelected(item:AnyObject!)->Void
     
+}
+
+protocol MenuDelegate : class {
+    func menuSelected(selectedMenu:[String:String])->Void
 }
 

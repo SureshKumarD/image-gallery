@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, ItemDelegate {
+class HomeViewController: UIViewController, AlbumDelegate, MenuDelegate {
     
     //Storyboard objects...
     @IBOutlet weak var galleryTypeSegmentControl: UISegmentedControl!
@@ -22,14 +22,19 @@ class HomeViewController: UIViewController, ItemDelegate {
     
     //TableView...
     var galleryTableView : GalleryTableView!
-    
+    var menuTableView : MenuTableView!
     
     //Navigation Items...
     var leftBarButtonItem : UIBarButtonItem!
     var rightBarButtonItem : UIBarButtonItem!
     var navigationLeftButton : UIButton!
     var navigationRightButton : UIButton!
+    var navigationTitleView : UIView!
+    var navigationTitleLabel: UILabel!
+    var navigationTitleDisclosureView : UIImageView!
 
+    var imagesInfoArray : [AnyObject] = []
+    var mainMenuDisclosed : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +48,6 @@ class HomeViewController: UIViewController, ItemDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.sampleApiHit()
         
         
     }
@@ -81,10 +85,13 @@ class HomeViewController: UIViewController, ItemDelegate {
         self.navigationController?.navigationBar.barTintColor = UIColor.clearColor()
         
         self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
-        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationController?.navigationBar.tintColor = kWHITE_COLOR
         self.navigationController?.navigationBar.translucent = false
+        self.navigationItem.titleView?.addSubview(UIView())
         self.setNavigationLeftButton()
+        
         self.setNavigationRightButton()
+        self.setNavigationTitleView()
         self.changeGalleryView()
 
     }
@@ -99,9 +106,10 @@ class HomeViewController: UIViewController, ItemDelegate {
         
         self.galleryCollectionView = GalleryCollectionView(frame: self.galleryTypeContainerView.bounds , collectionViewLayout: flowLayout)
         self.galleryCollectionView.viewOption = self.galleryViewOption
-        GalleryCollectionView.itemDelegate = self
-        self.galleryCollectionView.imageInfoArray = DataManager.sharedDataManager().objects
+        self.galleryCollectionView.imagesInfoArray = self.imagesInfoArray
+        GalleryCollectionView.albumDelegate = self
         self.galleryTypeContainerView.addSubview(self.galleryCollectionView)
+        
         self.galleryViewOption = GalleryView.Grid
     }
 
@@ -110,10 +118,17 @@ class HomeViewController: UIViewController, ItemDelegate {
     func tableViewDefaultSettings() {
         
         self.galleryTableView = GalleryTableView(frame: self.galleryTypeContainerView.bounds , style: UITableViewStyle.Plain)
-        GalleryTableView.itemDelegate = self
-        self.galleryTableView.imageInfoArray = DataManager.sharedDataManager().objects
+        GalleryTableView.albumDelegate = self
+        self.galleryTableView.imagesInfoArray = self.imagesInfoArray
         self.galleryTypeContainerView.addSubview(self.galleryTableView)
         self.galleryTableView.hidden = true
+        
+        
+        self.menuTableView = MenuTableView(frame: self.galleryTypeContainerView.bounds , style: UITableViewStyle.Grouped)
+        MenuTableView.menuDelegate = self
+        self.galleryTypeContainerView.addSubview(self.menuTableView)
+        self.menuTableView.hidden = true
+        
     }
     
     //Register CollectionView Nib
@@ -127,24 +142,12 @@ class HomeViewController: UIViewController, ItemDelegate {
     func didFinishLayout() {
         self.galleryCollectionView.frame = self.galleryTypeContainerView.bounds
         self.galleryTableView.frame = self.galleryTypeContainerView.bounds
-
+        self.menuTableView.frame = self.galleryTypeContainerView.bounds
     }
     
     
-    func sampleApiHit() {
-       
-        
-        IMGGalleryRequest.hotGalleryPage(0, success: { (objects: [AnyObject]!) -> Void in
-            print(objects)
-            }) { (error : NSError!) -> Void in
-                
-        }
-        
-        
-    }
-    
-    //MARK:- Item Selected Delegate
-    func itemSelected(item: AnyObject!) {
+    //MARK:- Album Selected Delegate
+    func albumSelected(item: AnyObject!) {
         
         self.view.userInteractionEnabled = false
         DataManager.sharedDataManager().startActivityIndicator()
@@ -154,24 +157,94 @@ class HomeViewController: UIViewController, ItemDelegate {
             
             
             DataManager.sharedDataManager().stopActivityIndicator()
-//            self.view.userInteractionEnabled = true
-            self.openDetailViewController()
-//            self.openDetailViewController(imagesObjectDictionary!["data"] as! [AnyObject]!)
+            self.view.userInteractionEnabled = true
+            if let images = imagesObjectDictionary!["images"] as! [AnyObject]? {
+                // Check whether images are availble
+                if(images.count == 0) {
+                    self.showAlertView("Zero!", message: "No, images available in this album")
+                }else {
+                    self.openDetailViewController(images)
+                }
+            }else {
+                
+                self.showAlertView("Error", message: "Something went wrong!")
+            }
+            
             }) { (error: NSError) -> Void in
                 
             self.view.userInteractionEnabled = true
             DataManager.sharedDataManager().stopActivityIndicator()
+                self.showAlertView("Error", message: error.localizedDescription)
         }
     }
     
-    func openDetailViewController() {
-//    func openDetailViewController(imagesArray : [AnyObject]) {
+    // Move to DetailViewController...
+    func openDetailViewController(imagesArray : [AnyObject]) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let detailVC = storyBoard.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
-//        detailVC.imagesArray = imagesArray
+        detailVC.imagesArray = imagesArray
         
         self.navigationController?.pushViewController(detailVC, animated: false)
 
+    }
+    
+    func showAlertView(title: String!, message : String!) {
+        let alertView = UIAlertView(title: title, message: message, delegate: nil, cancelButtonTitle: "OK")
+        alertView.show()
+    }
+    
+    
+    //MARK:- Menu Delegate
+    func menuSelected(selectedMenu: [String : String]) {
+        self.foldMainMenu()
+        let section = selectedMenu["section"] as String!
+        var isAlreadyOnSameCategory = false
+        
+        if(Int(section) == 0) {
+            let index = selectedMenu["index"] as String!
+            let sharedInstance = DataManager.sharedDataManager()
+            switch(Int(index)!) {
+            case 0:
+                if(sharedInstance.currentAlbumCategory == AlbumGategory.Hot) {
+                    isAlreadyOnSameCategory = true
+                }
+                sharedInstance.currentAlbumCategory = AlbumGategory.Hot
+                self.navigationTitleLabel.text = "Hot"
+                break
+            case 1:
+                if(sharedInstance.currentAlbumCategory == AlbumGategory.Top) {
+                    isAlreadyOnSameCategory = true
+                }
+                sharedInstance.currentAlbumCategory = AlbumGategory.Top
+                self.navigationTitleLabel.text = "Top"
+                break
+            case 2:
+                if(sharedInstance.currentAlbumCategory == AlbumGategory.User) {
+                    isAlreadyOnSameCategory = true
+                }
+                sharedInstance.currentAlbumCategory = AlbumGategory.User
+                self.navigationTitleLabel.text = "User"
+                break
+            default:
+            
+                sharedInstance.currentAlbumCategory = AlbumGategory.Hot
+                self.navigationTitleLabel.text = "Hot"
+                break
+                
+            }
+            if(!isAlreadyOnSameCategory) {
+                self.resetAlbumObjects()
+                self.fetchAlbums()
+            }
+           
+        }else {
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let appInfoVC = storyBoard.instantiateViewControllerWithIdentifier("AppInfoViewController") as! AppInfoViewController
+            
+            
+            self.navigationController?.pushViewController(appInfoVC, animated: false)
+            
+        }
     }
     
     //MARK:- NavigationBar
@@ -182,8 +255,8 @@ class HomeViewController: UIViewController, ItemDelegate {
             self.navigationLeftButton = UIButton(type: UIButtonType.System)
         }
         self.navigationLeftButton.setTitle("Viral", forState: UIControlState.Normal)
-        self.navigationLeftButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        self.navigationLeftButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 20)
+        self.navigationLeftButton.setTitleColor(kWHITE_COLOR, forState: UIControlState.Normal)
+        self.navigationLeftButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 17)
         self.navigationLeftButton.frame = CGRectMake(0, 0, 50, 50)
         self.navigationLeftButton.imageEdgeInsets = UIEdgeInsetsMake(10,10,10,10)
         self.navigationLeftButton.contentEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 10)
@@ -205,7 +278,7 @@ class HomeViewController: UIViewController, ItemDelegate {
         self.navigationRightButton.frame = CGRectMake(0, 0, 50, 50)
         self.navigationRightButton.imageEdgeInsets = UIEdgeInsetsMake(12,12,12,12)
         self.navigationRightButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, -10)
-        self.navigationRightButton.tintColor = UIColor.whiteColor()
+        self.navigationRightButton.tintColor = kWHITE_COLOR
         self.navigationRightButton.imageView?.contentMode = UIViewContentMode.Center
         self.navigationRightButton.addTarget(self, action: Selector("changeGalleryView"), forControlEvents: UIControlEvents.TouchUpInside)
         self.rightBarButtonItem.customView = self.navigationRightButton
@@ -213,6 +286,85 @@ class HomeViewController: UIViewController, ItemDelegate {
 
     }
     
+    //Title View... 
+    func setNavigationTitleView() {
+        self.navigationTitleView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 64))
+        self.navigationTitleLabel = UILabel(frame: CGRect(x: 0, y: 17, width: self.navigationTitleView.frame.size.width, height: 21))
+        self.navigationTitleLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 17)
+        self.navigationTitleLabel.textColor = kWHITE_COLOR
+        self.navigationTitleLabel.text = "Hot"
+        self.navigationTitleLabel.textAlignment = NSTextAlignment.Center
+        self.navigationTitleDisclosureView = UIImageView(frame: CGRect(x: self.navigationTitleView.frame.size.width/2 - 10, y: 38, width: 21, height: 12))
+        self.navigationTitleDisclosureView.contentMode = UIViewContentMode.ScaleAspectFit
+        self.navigationTitleDisclosureView.image = UIImage(named: "DownArrow")
+        self.navigationTitleDisclosureView.image? = (self.navigationTitleDisclosureView.image?.imageWithRenderingMode(.AlwaysTemplate))!
+        self.navigationTitleDisclosureView.tintColor = kWHITE_COLOR
+        self.navigationTitleView.addSubview(self.navigationTitleLabel)
+        self.navigationTitleView.addSubview(self.navigationTitleDisclosureView)
+        self.navigationItem.titleView = self.navigationTitleView;
+        
+        self.setTapGesture()
+    }
+    
+    //TapGesture for Navigation TitleView
+    func setTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: Selector("titleViewTapped"))
+        self.navigationTitleView.userInteractionEnabled = true
+        self.navigationTitleView.addGestureRecognizer(tapGesture)
+    }
+    
+    
+    //TapGesture handler 
+    func titleViewTapped() {
+        self.mainMenuDisclosed = !self.mainMenuDisclosed
+        if(self.mainMenuDisclosed) {
+            self.unFoldMainMenu()
+        }else {
+            self.foldMainMenu()
+        }
+    }
+    
+    //Open MainMenu
+    func unFoldMainMenu() {
+        self.navigationTitleView.userInteractionEnabled = false
+        self.menuTableView.hidden = false
+        UIView.animateWithDuration(0.75, delay: 0.0, options: UIViewAnimationOptions.TransitionFlipFromBottom, animations: { () -> Void in
+            let frame = self.galleryTypeContainerView.frame
+            self.menuTableView.frame = frame
+            self.navigationTitleDisclosureView.image = UIImage(named: "UpArrow")
+            self.navigationTitleDisclosureView.image? = (self.navigationTitleDisclosureView.image?.imageWithRenderingMode(.AlwaysTemplate))!
+            self.navigationTitleDisclosureView.tintColor = kWHITE_COLOR
+            }) { (Bool) -> Void in
+                
+                self.navigationRightButton.userInteractionEnabled = false
+                self.navigationLeftButton.userInteractionEnabled = false
+                self.navigationTitleView.userInteractionEnabled = true
+               
+            
+        }
+
+    }
+    
+    //Close MainMenu
+    func foldMainMenu() {
+        self.navigationTitleView.userInteractionEnabled = false
+        UIView.animateWithDuration(0.75, delay: 0.0, options: UIViewAnimationOptions.TransitionFlipFromTop, animations: { () -> Void in
+            var frame = self.galleryTypeContainerView.frame
+            frame.origin.y = (self.galleryTypeContainerView.frame.size.height + 64) * -1
+            self.menuTableView.frame = frame
+            self.navigationTitleDisclosureView.image = UIImage(named: "DownArrow")
+            self.navigationTitleDisclosureView.image? = (self.navigationTitleDisclosureView.image?.imageWithRenderingMode(.AlwaysTemplate))!
+            self.navigationTitleDisclosureView.tintColor = kWHITE_COLOR
+            }) { (Bool) -> Void in
+                self.menuTableView.hidden = true
+                self.navigationRightButton.userInteractionEnabled = true
+                self.navigationLeftButton.userInteractionEnabled = true
+                self.navigationTitleView.userInteractionEnabled = true
+                
+                
+        }
+
+    }
     
     //MARK:- Navigation Bar Action
     //Right button action handler...
@@ -226,7 +378,6 @@ class HomeViewController: UIViewController, ItemDelegate {
             self.changeViewOptionToList()
             break
             
-            
         case GalleryView.List?:
             self.galleryViewOption = GalleryView.Grid
              image = UIImage(named: "Grid")
@@ -238,6 +389,7 @@ class HomeViewController: UIViewController, ItemDelegate {
             image = UIImage(named: "StaggeredGrid")
             self.changeViewOptionToStaggeredGrid()
             break
+            
         default:
             break
         }
@@ -249,13 +401,22 @@ class HomeViewController: UIViewController, ItemDelegate {
     
     //Left button action handler...
     func fetchGalleyWithViralOption() {
-        DataManager.sharedDataManager().isViral = !DataManager.sharedDataManager().isViral
+        self.resetAlbumObjects()
         if(DataManager.sharedDataManager().isViral) {
-           self.navigationLeftButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+           self.navigationLeftButton.setTitleColor(kWHITE_COLOR, forState: UIControlState.Normal)
         }else {
             self.navigationLeftButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
         }
+        self.fetchAlbums()
         
+    }
+    
+    //Reset Albums already in hand....
+    func resetAlbumObjects() {
+        DataManager.sharedDataManager().isViral = !DataManager.sharedDataManager().isViral
+        self.galleryTableView.imagesInfoArray = []
+        self.galleryCollectionView.imagesInfoArray = []
+
     }
     
 
@@ -266,6 +427,7 @@ class HomeViewController: UIViewController, ItemDelegate {
         self.galleryTableView.hidden = true
         self.flowLayout.minimumInteritemSpacing = 5
         self.galleryCollectionView.viewOption = GalleryView.Grid
+        self.galleryCollectionView.imagesInfoArray = self.galleryTableView.imagesInfoArray
         self.galleryCollectionView.reloadData()
     }
     
@@ -275,6 +437,7 @@ class HomeViewController: UIViewController, ItemDelegate {
         self.galleryTableView.hidden = true
         self.flowLayout.minimumInteritemSpacing = 0
         self.galleryCollectionView.viewOption = GalleryView.Staggered
+        self.galleryCollectionView.imagesInfoArray = self.galleryTableView.imagesInfoArray
         self.galleryCollectionView.reloadData()
     }
 
@@ -282,9 +445,36 @@ class HomeViewController: UIViewController, ItemDelegate {
     func changeViewOptionToList() {
         self.galleryCollectionView.hidden = true
         self.galleryTableView.hidden = false
-        
+        self.galleryTableView.imagesInfoArray = self.galleryCollectionView.imagesInfoArray
         self.galleryTableView.reloadData()
     }
+    
+    //Fetch albums with the Global constants available in hand...
+    func fetchAlbums() {
+        let sharedInstance = DataManager.sharedDataManager()
+        sharedInstance.currentPage = 0
+        sharedInstance.isRequiredLoadNextPage = false
+        sharedInstance.startActivityIndicator()
+        self.view.userInteractionEnabled  = false
+        self.navigationController?.navigationBar.userInteractionEnabled = false
+        NetworkManager.fetchAlbums(sharedInstance.currentAlbumCategory, isViral: sharedInstance.isViral, pageNumber: sharedInstance.currentPage,  handler:{
+            (objects:[AnyObject]!) -> Void in
+            self.galleryCollectionView.imagesInfoArray = objects
+            self.galleryTableView.imagesInfoArray = objects
+            self.galleryCollectionView.reloadData()
+            self.galleryTableView.reloadData()
+            sharedInstance.stopActivityIndicator()
+            self.view.userInteractionEnabled  = true
+            self.navigationController?.navigationBar.userInteractionEnabled = true
+            
+        })
+        
+    }
+
+    
+    
+    
+    
     
 
 }

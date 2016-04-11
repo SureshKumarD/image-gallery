@@ -12,12 +12,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate, IMGSessionDelegate{
 
     var window: UIWindow?
-    
+    var launchedUrl : Bool!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
         IMGSession.authenticatedSessionWithClientID(CLIENT_ID, secret: SECRET_KEY, authType: IMGAuthType.CodeAuth, withDelegate:self)
+//        self.launchedUrl = launchOptions![UIApplicationLaunchOptionsURLKey] as! Bool
+//
         
         return true
     }
@@ -67,14 +69,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, IMGSessionDelegate{
         IMGSession.sharedInstance().authenticateWithCode(pinCode)
         
         //Default Hot Image Gallery being fetched...
-        NetworkManager.getuserImageGallery (0, sortViral: true, completionHandler: {
+        NetworkManager.getHotImageGallery(0, sortViral: true) { (objects) -> Void in
             DataManager.sharedDataManager().stopActivityIndicator()
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let homeVC = storyBoard.instantiateViewControllerWithIdentifier("HomeViewController")
-            let navController = self.window?.rootViewController as! UINavigationController
+            let homeVC = storyBoard.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
             
+            homeVC.imagesInfoArray = objects
+            let navController = self.window?.rootViewController as! UINavigationController
             navController.pushViewController(homeVC, animated: false)
-        })
+        }
+        
         
         return true
 

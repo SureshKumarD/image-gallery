@@ -58,28 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageGallery/HomeViewController.swift"
-            timestampString = "481966151.191801"
+            timestampString = "482013377.24361"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "itemSelected(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ImageGallery/DetailViewController.swift"
-            timestampString = "481966656.865889"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "carousel(_:viewForItemAtIndex:reusingView:)"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "albumSelected(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageGallery/HomeViewController.swift"
-            timestampString = "481966357.497368"
+            timestampString = "482013377.24361"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "openDetailViewController()"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "openDetailViewController(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -105,94 +89,254 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ImageGallery/DetailViewController.swift"
-            timestampString = "481966656.865889"
+            filePath = "ImageGallery/HomeViewController.swift"
+            timestampString = "482013377.24361"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "numberOfItemsInCarousel(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ImageGallery/DetailViewController.swift"
-            timestampString = "481966616.118012"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ImageGallery/NetworkManager.swift"
-            timestampString = "481989133.964767"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "getAlbumImages(_:success:failure:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ImageGallery/NetworkManager.swift"
-            timestampString = "481989133.964767"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "getAlbumImages(_:success:failure:)"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "albumSelected(_:)"
             landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "static ImageGallery.NetworkManager.getAlbumImages (ImageGallery.NetworkManager.Type)(Swift.String, success : (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;&gt;) -&gt; (), failure : (__ObjC.NSError) -&gt; ()) -&gt; ()"
+                  symbolName = "ImageGallery.HomeViewController.(albumSelected (ImageGallery.HomeViewController) -&gt; (Swift.ImplicitlyUnwrappedOptional&lt;Swift.AnyObject&gt;) -&gt; ()).(closure #1)"
                   moduleName = "ImageGallery"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suresh/Documents/ImageGallery/ImageGallery/NetworkManager.swift"
-                  timestampString = "481989134.148371"
+                  urlString = "file:///Users/suresh/Documents/ImageGallery/ImageGallery/HomeViewController.swift"
+                  timestampString = "482076125.164773"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "84"
-                  endingLineNumber = "84"
-                  offsetFromSymbolStart = "2298">
+                  startingLineNumber = "173"
+                  endingLineNumber = "173"
+                  offsetFromSymbolStart = "1710">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "static ImageGallery.NetworkManager.(getAlbumImages (ImageGallery.NetworkManager.Type) -&gt; (Swift.String, success : (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;&gt;) -&gt; (), failure : (__ObjC.NSError) -&gt; ()) -&gt; ()).(closure #1)"
+                  symbolName = "ImageGallery.HomeViewController.(albumSelected (ImageGallery.HomeViewController) -&gt; (Swift.ImplicitlyUnwrappedOptional&lt;Swift.AnyObject&gt;) -&gt; ()).(closure #2)"
                   moduleName = "ImageGallery"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suresh/Documents/ImageGallery/ImageGallery/NetworkManager.swift"
-                  timestampString = "481989134.148621"
+                  urlString = "file:///Users/suresh/Documents/ImageGallery/ImageGallery/HomeViewController.swift"
+                  timestampString = "482076125.165063"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "87"
-                  endingLineNumber = "87"
-                  offsetFromSymbolStart = "23">
+                  startingLineNumber = "175"
+                  endingLineNumber = "175"
+                  offsetFromSymbolStart = "19">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageGallery/UIScrollView+Custom.swift"
+            timestampString = "482006871.929433"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "reloadTableOrCollectionView(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageGallery/Views/CollectionView/GalleryCollectionView.swift"
+            timestampString = "482006567.005562"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "reloadTableOrCollectionView(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageGallery/UIScrollView+Custom.swift"
+            timestampString = "482006668.357598"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "fetchAlbums()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ext.ImageGallery.__ObjC.UIScrollView.fetchAlbums (__ObjC.UIScrollView)() -&gt; ()"
+                  moduleName = "ImageGallery"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/suresh/Documents/ImageGallery/ImageGallery/UIScrollView+Custom.swift"
+                  timestampString = "482076125.174134"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "37">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ext.ImageGallery.__ObjC.UIScrollView.(fetchAlbums (__ObjC.UIScrollView) -&gt; () -&gt; ()).(closure #1)"
+                  moduleName = "ImageGallery"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/suresh/Documents/ImageGallery/ImageGallery/UIScrollView+Custom.swift"
+                  timestampString = "482076125.174426"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageGallery/UIScrollView+Custom.swift"
+            timestampString = "482006672.629548"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "fetchAlbums()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageGallery/HomeViewController.swift"
+            timestampString = "482085576.988885"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
+            landmarkName = "menuSelected(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageGallery/AppDelegate.swift"
+            timestampString = "482047681.124505"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "application(_:openURL:options:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageGallery/AppDelegate.swift"
+            timestampString = "482047681.124505"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "application(_:openURL:options:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ImageGallery.AppDelegate.application (ImageGallery.AppDelegate)(__ObjC.UIApplication, openURL : __ObjC.NSURL, options : Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; Swift.Bool"
+                  moduleName = "ImageGallery"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/suresh/Documents/ImageGallery/ImageGallery/AppDelegate.swift"
+                  timestampString = "482076125.191991"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "2727">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ImageGallery.AppDelegate.(application (ImageGallery.AppDelegate) -&gt; (__ObjC.UIApplication, openURL : __ObjC.NSURL, options : Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; Swift.Bool).(closure #1)"
+                  moduleName = "ImageGallery"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/suresh/Documents/ImageGallery/ImageGallery/AppDelegate.swift"
+                  timestampString = "482076125.192241"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageGallery/AppDelegate.swift"
+            timestampString = "482047681.124505"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "application(_:openURL:options:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageGallery/AppDelegate.swift"
+            timestampString = "482047681.124505"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "imgurSessionNeedsExternalWebview(_:completion:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

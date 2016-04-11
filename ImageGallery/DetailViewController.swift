@@ -11,24 +11,23 @@ import UIKit
 class DetailViewController: UIViewController, iCarouselDataSource, iCarouselDelegate {
 
     @IBOutlet var carousel : iCarousel!
-    var imagesArray :[Int] = []
+    var imagesArray  = []
+    var progress = NSProgress()
     override func viewDidLoad() {
         super.viewDidLoad()
-        carousel.type = .CoverFlow2
+        carousel.type = .Linear
         carousel.dataSource = self
         carousel.delegate = self
-        for i in 0...5
-        {
-            self.imagesArray.append(i)
-        }
-        self.carousel.reloadData()
+        
         
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.setGradientBackground()
+        self.preloadAlbumImages()
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -39,7 +38,7 @@ class DetailViewController: UIViewController, iCarouselDataSource, iCarouselDele
     func setGradientBackground() {
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = view.bounds
-        gradient.colors = [UIColor.whiteColor().CGColor, UIColor.blackColor().CGColor]
+        gradient.colors = [kWHITE_COLOR.CGColor, UIColor.blackColor().CGColor]
         self.view.layer.insertSublayer(gradient, atIndex: 0)
     }
 
@@ -51,7 +50,7 @@ class DetailViewController: UIViewController, iCarouselDataSource, iCarouselDele
     
     func carousel(carousel: iCarousel, viewForItemAtIndex index: Int, reusingView view: UIView?) -> UIView
     {
-        var label: UILabel
+
         var itemView: UIImageView
         
         //create new view if no view is available for recycling
@@ -61,30 +60,17 @@ class DetailViewController: UIViewController, iCarouselDataSource, iCarouselDele
             //this `if (view == nil) {...}` statement because the view will be
             //recycled and used with other index values later
             itemView = UIImageView(frame:CGRect(x:0, y:0, width:200, height:200))
-            itemView.image = UIImage(named: "page.png")
             itemView.contentMode = .Center
-            
-            label = UILabel(frame:itemView.bounds)
-            label.backgroundColor = UIColor.whiteColor()
-            label.alpha = 0.5
-            label.textAlignment = .Center
-            label.font = label.font.fontWithSize(50)
-            label.tag = 1
-            itemView.addSubview(label)
+            let imageObject = self.imagesArray[index] as! [String: AnyObject]
+            let url = imageObject["link"]as! String
+            itemView.sd_setImageWithURL(NSURL(string: url), placeholderImage: UIImage(named: "placeholder2"), options: SDWebImageOptions.CacheMemoryOnly)
+            itemView.contentMode = UIViewContentMode.ScaleToFill
         }
         else
         {
             //get a reference to the label in the recycled view
             itemView = view as! UIImageView;
-            label = itemView.viewWithTag(1) as! UILabel!
         }
-        
-        //set item label
-        //remember to always set any properties of your carousel item
-        //views outside of the `if (view == nil) {...}` check otherwise
-        //you'll get weird issues with carousel item content appearing
-        //in the wrong place in the carousel
-        label.text = "\(self.imagesArray[index])"
         
         return itemView
     }
@@ -97,5 +83,47 @@ class DetailViewController: UIViewController, iCarouselDataSource, iCarouselDele
         }
         return value
     }
+    
+    
+    //Preload images
+    func preloadAlbumImages() {
+        
+        self.carousel.hidden = true
+        var imageUrlsArray :[AnyObject]! = []
+        for image in self.imagesArray {
+            imageUrlsArray.append(image["link"]as! String)
 
+        }
+        
+        
+        SDWebImagePrefetcher.sharedImagePrefetcher().prefetchURLs(imageUrlsArray, progress: { (int1 : UInt, int2 : UInt) -> Void in
+            self.carousel.hidden = false
+            self.carousel.reloadData()
+            
+            }) { (int1 : UInt, int2 :UInt) -> Void in
+                self.carousel.hidden = false
+                self.carousel.reloadData()
+                self.progress.removeObserver(self, forKeyPath: "fractionCompleted", context: nil)
+                
+        }
+        self.progress.addObserver(self, forKeyPath: "fractionCompleted", options: NSKeyValueObservingOptions.New, context: nil)
+        
+        
+    }
+    
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        
+        if keyPath !=  "fractionCompleted" {
+           super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+            
+        }
+    }
+    
+    //Garbage collector - Explicitly
+    deinit {
+        self.carousel.hidden = true
+        self.carousel = nil
+    }
+    
+    
 }

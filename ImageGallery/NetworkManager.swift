@@ -11,23 +11,25 @@ import UIKit
 class NetworkManager: NSObject {
     
 
-    //MARK:- Get Image Gallery from sections Hot, Top, User...
+    //MARK:- Get Hot Image Gallery
     
-    class func getHotImageGallery(page : Int, sortViral: Bool, completionHandler:()->Void) {
+    class func getHotImageGallery(page : Int, sortViral: Bool, completionHandler:(objects :[AnyObject]!)->Void) {
         IMGGalleryRequest.hotGalleryPage(page, withViralSort: sortViral, success: { (objects :[AnyObject]!) -> Void in
-            self.filterAlbums(objects)
-            completionHandler()
+            let albums = self.filterAlbums(objects)
+            completionHandler(objects: albums)
             }) { (error: NSError!) -> Void in
                 
         }
     }
     
+    
+    //MARK:- Get Top Image Gallery
+    
+    class func getTopImageGallery(page : Int, sortViral : Bool, completionHandler:(objects :[AnyObject]!)->Void) {
         
-    class func getTopImageGallery(page : Int, sortViral : Bool, completionHandler:()->Void) {
-        
-        IMGGalleryRequest.topGalleryPage(page, withWindow:IMGTopGalleryWindow.All , withViralSort: true, success: { (objects :[AnyObject]!) -> Void in
-            self.filterAlbums(objects)
-            completionHandler()
+        IMGGalleryRequest.topGalleryPage(page, withWindow:IMGTopGalleryWindow.All , withViralSort: sortViral, success: { (objects :[AnyObject]!) -> Void in
+            let albums = self.filterAlbums(objects)
+            completionHandler(objects: albums)
             }) { (error : NSError!) -> Void in
                 
         }
@@ -35,12 +37,14 @@ class NetworkManager: NSObject {
                     
     }
     
+    
+    //MARK:- Get User Image Gallery
         
-    class func getuserImageGallery(page : Int,  sortViral : Bool, completionHandler:()->Void) {
+    class func getuserImageGallery(page : Int,  sortViral : Bool, completionHandler:(objects :[AnyObject]!)->Void) {
         
-        IMGGalleryRequest.userGalleryPage(page, withViralSort: true, showViral: true, success: { (objects:[AnyObject]!) -> Void in
-            self.filterAlbums(objects)
-            completionHandler()
+        IMGGalleryRequest.userGalleryPage(page, withViralSort: sortViral, showViral: false, success: { (objects:[AnyObject]!) -> Void in
+            let albums = self.filterAlbums(objects)
+            completionHandler(objects: albums)
             }) { (error :NSError!) -> Void in
                 
         }
@@ -49,15 +53,45 @@ class NetworkManager: NSObject {
     }
     
     
-    class func filterAlbums(objects :[AnyObject!]) {
+    //MARK:- Filter only Albums
+    
+    class func filterAlbums(objects :[AnyObject!]) -> [AnyObject]! {
+        var albums :[AnyObject] = []
         for object in objects {
             if(object.isKindOfClass(IMGGalleryAlbum)) {
-                DataManager.sharedDataManager().objects.append(object)
+                albums.append(object)
             }
         }
+        return albums
+        
     }
     
 
+    //Servercall distribution amount Hot, Top and User albums...
+    
+    class func fetchAlbums(category : AlbumGategory, isViral : Bool, pageNumber : Int, handler:(objects :[AnyObject]!)->Void) {
+
+        switch(category) {
+        case .Hot:
+            NetworkManager.getTopImageGallery(pageNumber, sortViral: isViral, completionHandler:{
+                (objects:[AnyObject]!) -> Void in
+                handler(objects: objects)
+                })
+            break
+        case .Top:
+            NetworkManager.getTopImageGallery(pageNumber, sortViral: isViral,  completionHandler:{
+                (objects:[AnyObject]!) -> Void in
+                handler(objects: objects)
+            })
+            break
+        case .User:
+            NetworkManager.getuserImageGallery(pageNumber, sortViral: isViral,  completionHandler:{
+                (objects:[AnyObject]!) -> Void in
+                handler(objects: objects)
+            })
+            break
+        }
+    }
     
     //MARK: - Custom Server Call
     // Fetch album images from the imgur server using album id
@@ -67,25 +101,15 @@ class NetworkManager: NSObject {
         manager.requestSerializer = AFJSONRequestSerializer()
         manager.responseSerializer = AFJSONResponseSerializer()
         manager.requestSerializer.setValue("Client-Id "+CLIENT_ID, forHTTPHeaderField: "Authorization")
-        manager.requestSerializer.setValue("access-control-allow-headers", forHTTPHeaderField: "Content-Type")
-        manager.responseSerializer.set("X-RateLimit-ClientLimit, X-RateLimit-ClientRemaining, X-RateLimit-UserLimit, X-RateLimit-UserRemaining, X-RateLimit-UserReset", forHTTPHeaderField: "Access-Control-Expose-Headers")
         manager.responseSerializer.acceptableContentTypes = NSSet(array: ["text/plain","application/json", "text/json", "text/javascript", "text/html","text/xml"]) as? Set<String>
         manager.requestSerializer.HTTPRequestHeaders
-//        let request = NSMutableURLRequest(URL: NSURL(string:URL_BASE+urlString)!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 100000)
-//        request.HTTPMethod = "GET"
-//        request.setValue("Client-Id "+CLIENT_ID, forHTTPHeaderField: "Authorization")
-//        manager.dataTaskWithRequest(request) { (response :NSURLResponse, responseObjec : AnyObject?, error: NSError?) -> Void in
-//            print(response )
-//        }
-//        
+    
         
-
-
         manager.GET(urlString, parameters: nil, progress: nil, success: {
             (task: NSURLSessionDataTask!, responseObject: AnyObject?) in
            
-                let response = responseObject as! Dictionary<String, AnyObject>
-                 success(response)
+            let response = responseObject?["data"] as! Dictionary<String, AnyObject>
+                success(response)
             
             }, failure: {
                 (task: NSURLSessionDataTask?, error: NSError) in

@@ -16,16 +16,26 @@ class DataManager: NSObject {
     //SharedInstance...
     static let dataManager = DataManager()
     
-
-    var objects : [AnyObject]!
+    //Activity Indicator...
     var activityIndicator : UIActivityIndicatorView?
     
-    var isViral: Bool
+    //Global vars required for server hit...
+    var isViral : Bool
+    var currentAlbumCategory : AlbumGategory
+    var currentPage : Int
+    var isRequiredLoadNextPage : Bool
+    
     
     override init() {
-        self.objects = []
+        
+        //Initialize all data members...
         self.isViral = true
+        self.currentAlbumCategory = AlbumGategory.Hot
+        self.currentPage = 0
+        self.isRequiredLoadNextPage = false
     }
+    
+    
     
     class func sharedDataManager()-> DataManager! {
         return dataManager
@@ -34,13 +44,13 @@ class DataManager: NSObject {
     
     //MARK: - Acitivity Indicator - usage
     func startActivityIndicator() {
+        
         if(self.activityIndicator == nil){
             self.activityIndicator  = UIActivityIndicatorView()
-            self.activityIndicator?.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
             self.activityIndicator?.frame = CGRectMake(WIDTH_WINDOW_FRAME/2 - 50, HEIGHT_WINDOW_FRAME/2-50, 100, 100)
         }
+        self.activityIndicator?.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
         
-       
         let mainWindow = UIApplication.sharedApplication().keyWindow
         mainWindow?.addSubview(self.activityIndicator!)
         

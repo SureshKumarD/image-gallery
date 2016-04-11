@@ -70,7 +70,7 @@
 
 @implementation NSObject (iCarousel)
 
-- (NSUInteger)numberOfPlaceholdersInCarousel:(__unused iCarousel *)carousel { return 0; }
+- (NSUInteger)numberOfplaceholder2sInCarousel:(__unused iCarousel *)carousel { return 0; }
 - (void)carouselWillBeginScrollingAnimation:(__unused iCarousel *)carousel {}
 - (void)carouselDidEndScrollingAnimation:(__unused iCarousel *)carousel {}
 - (void)carouselDidScroll:(__unused iCarousel *)carousel {}
@@ -100,10 +100,10 @@
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) NSMutableDictionary *itemViews;
 @property (nonatomic, strong) NSMutableSet *itemViewPool;
-@property (nonatomic, strong) NSMutableSet *placeholderViewPool;
+@property (nonatomic, strong) NSMutableSet *placeholder2ViewPool;
 @property (nonatomic, assign) CGFloat previousScrollOffset;
 @property (nonatomic, assign) NSInteger previousItemIndex;
-@property (nonatomic, assign) NSInteger numberOfPlaceholdersToShow;
+@property (nonatomic, assign) NSInteger numberOfplaceholder2sToShow;
 @property (nonatomic, assign) NSInteger numberOfVisibleItems;
 @property (nonatomic, assign) CGFloat itemWidth;
 @property (nonatomic, assign) CGFloat offsetMultiplier;
@@ -934,7 +934,7 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
             [self loadViewAtIndex:0];
         }
     }
-    else if (_numberOfPlaceholders > 0)
+    else if (_numberOfplaceholder2s > 0)
     {
         if ([_itemViews count] == 0)
         {
@@ -1010,7 +1010,7 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
     }
     _numberOfVisibleItems = MIN(MAX_VISIBLE_ITEMS, _numberOfVisibleItems);
     _numberOfVisibleItems = [self valueForOption:iCarouselOptionVisibleItems withDefault:_numberOfVisibleItems];
-    _numberOfVisibleItems = MAX(0, MIN(_numberOfVisibleItems, _numberOfItems + _numberOfPlaceholdersToShow));
+    _numberOfVisibleItems = MAX(0, MIN(_numberOfVisibleItems, _numberOfItems + _numberOfplaceholder2sToShow));
 
 }
 
@@ -1030,7 +1030,7 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
             CGFloat spacing = [self valueForOption:iCarouselOptionSpacing withDefault:1.0];
             CGFloat width = _vertical ? self.bounds.size.height: self.bounds.size.width;
             count = MIN(MAX_VISIBLE_ITEMS, MAX(12, ceil(width / (spacing * _itemWidth)) * M_PI));
-            count = MIN(_numberOfItems + _numberOfPlaceholdersToShow, count);
+            count = MIN(_numberOfItems + _numberOfplaceholder2sToShow, count);
             break;
         }
         case iCarouselTypeCoverFlow:
@@ -1041,7 +1041,7 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
         case iCarouselTypeCustom:
         {
             //not used for non-circular carousels
-            return _numberOfItems + _numberOfPlaceholdersToShow;
+            return _numberOfItems + _numberOfplaceholder2sToShow;
         }
     }
     return [self valueForOption:iCarouselOptionCount withDefault:count];
@@ -1081,8 +1081,8 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
     }
     _wrapEnabled = !![self valueForOption:iCarouselOptionWrap withDefault:_wrapEnabled];
     
-    //no placeholders on wrapped carousels
-    _numberOfPlaceholdersToShow = _wrapEnabled? 0: _numberOfPlaceholders;
+    //no placeholder2s on wrapped carousels
+    _numberOfplaceholder2sToShow = _wrapEnabled? 0: _numberOfplaceholder2s;
     
     //set item width
     [self updateItemWidth];
@@ -1148,11 +1148,11 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
     }
 }
 
-- (void)queuePlaceholderView:(UIView *)view
+- (void)queueplaceholder2View:(UIView *)view
 {
     if (view)
     {
-        [_placeholderViewPool addObject:view];
+        [_placeholder2ViewPool addObject:view];
     }
 }
 
@@ -1166,12 +1166,12 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
     return view;
 }
 
-- (UIView *)dequeuePlaceholderView
+- (UIView *)dequeueplaceholder2View
 {
-    UIView *view = [_placeholderViewPool anyObject];
+    UIView *view = [_placeholder2ViewPool anyObject];
     if (view)
     {
-        [_placeholderViewPool removeObject:view];
+        [_placeholder2ViewPool removeObject:view];
     }
     return view;
 }
@@ -1187,11 +1187,11 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
     UIView *view = nil;
     if (index < 0)
     {
-        view = [_dataSource carousel:self placeholderViewAtIndex:(NSInteger)(ceil((CGFloat)_numberOfPlaceholdersToShow/2.0)) + index reusingView:[self dequeuePlaceholderView]];
+        view = [_dataSource carousel:self placeholder2ViewAtIndex:(NSInteger)(ceil((CGFloat)_numberOfplaceholder2sToShow/2.0)) + index reusingView:[self dequeueplaceholder2View]];
     }
     else if (index >= _numberOfItems)
     {
-        view = [_dataSource carousel:self placeholderViewAtIndex:_numberOfPlaceholdersToShow/2.0 + index - _numberOfItems reusingView:[self dequeuePlaceholderView]];
+        view = [_dataSource carousel:self placeholder2ViewAtIndex:_numberOfplaceholder2sToShow/2.0 + index - _numberOfItems reusingView:[self dequeueplaceholder2View]];
     }
     else
     {
@@ -1210,7 +1210,7 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
         UIView *oldItemView = [containerView.subviews lastObject];
         if (index < 0 || index >= _numberOfItems)
         {
-            [self queuePlaceholderView:oldItemView];
+            [self queueplaceholder2View:oldItemView];
         }
         else
         {
@@ -1275,8 +1275,8 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
     
     //calculate visible view indices
     NSMutableSet *visibleIndices = [NSMutableSet setWithCapacity:_numberOfVisibleItems];
-    NSInteger min = -(NSInteger)(ceil((CGFloat)_numberOfPlaceholdersToShow/2.0));
-    NSInteger max = _numberOfItems - 1 + _numberOfPlaceholdersToShow/2;
+    NSInteger min = -(NSInteger)(ceil((CGFloat)_numberOfplaceholder2sToShow/2.0));
+    NSInteger max = _numberOfItems - 1 + _numberOfplaceholder2sToShow/2;
     NSInteger offset = self.currentItemIndex - _numberOfVisibleItems/2;
     if (!_wrapEnabled)
     {
@@ -1305,7 +1305,7 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
             UIView *view = _itemViews[number];
             if ([number integerValue] < 0 || [number integerValue] >= _numberOfItems)
             {
-                [self queuePlaceholderView:view];
+                [self queueplaceholder2View:view];
             }
             else
             {
@@ -1341,15 +1341,15 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
         return;
     }
     
-    //get number of items and placeholders
+    //get number of items and placeholder2s
     _numberOfVisibleItems = 0;
     _numberOfItems = [_dataSource numberOfItemsInCarousel:self];
-    _numberOfPlaceholders = [_dataSource numberOfPlaceholdersInCarousel:self];
+    _numberOfplaceholder2s = [_dataSource numberOfplaceholder2sInCarousel:self];
 
     //reset view pools
     self.itemViews = [NSMutableDictionary dictionary];
     self.itemViewPool = [NSMutableSet set];
-    self.placeholderViewPool = [NSMutableSet setWithCapacity:_numberOfPlaceholders];
+    self.placeholder2ViewPool = [NSMutableSet setWithCapacity:_numberOfplaceholder2s];
     
     //layout views
     [self setNeedsLayout];
@@ -1357,7 +1357,7 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
     //fix scroll offset
     if (_numberOfItems > 0 && _scrollOffset < 0.0)
     {
-        [self scrollToItemAtIndex:0 animated:(_numberOfPlaceholders > 0)];
+        [self scrollToItemAtIndex:0 animated:(_numberOfplaceholder2s > 0)];
     }
 }
 
@@ -1618,7 +1618,7 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
     
     if (_scrollOffset < 0.0)
     {
-        [self scrollToItemAtIndex:0 animated:(animated && _numberOfPlaceholders)];
+        [self scrollToItemAtIndex:0 animated:(animated && _numberOfplaceholder2s)];
     }
 }
 
