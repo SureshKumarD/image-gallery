@@ -374,19 +374,19 @@ class HomeViewController: UIViewController, AlbumDelegate, MenuDelegate {
             
         case GalleryView.Staggered? :
             self.galleryViewOption = GalleryView.List
-            image = UIImage(named: "List")
+            image = UIImage(named: "list")
             self.changeViewOptionToList()
             break
             
         case GalleryView.List?:
             self.galleryViewOption = GalleryView.Grid
-             image = UIImage(named: "Grid")
+             image = UIImage(named: "grid")
             self.changeViewOptionToGrid()
             break
        
         case GalleryView.Grid? :
             self.galleryViewOption = GalleryView.Staggered
-            image = UIImage(named: "StaggeredGrid")
+            image = UIImage(named: "staggeredGrid")
             self.changeViewOptionToStaggeredGrid()
             break
             
