@@ -100,28 +100,29 @@ class DetailViewController: UIViewController, iCarouselDataSource, iCarouselDele
         
         
         SDWebImagePrefetcher.sharedImagePrefetcher().prefetchURLs(imageUrlsArray, progress: { (int1 : UInt, int2 : UInt) -> Void in
-            self.carousel.hidden = false
+            
+            self.carousel?.hidden = false
             
             
             }) { (int1 : UInt, int2 :UInt) -> Void in
-                self.carousel.hidden = false
-                self.carousel.reloadData()
+                self.carousel?.hidden = false
+                self.carousel?.reloadData()
                 DataManager.sharedDataManager().stopActivityIndicator()
-                self.progress.removeObserver(self, forKeyPath: "fractionCompleted", context: nil)
+//                self.progress.removeObserver(self, forKeyPath: "fractionCompleted", context: nil)
                 
         }
-        self.progress.addObserver(self, forKeyPath: "fractionCompleted", options: NSKeyValueObservingOptions.New, context: nil)
+//        self.progress.addObserver(self, forKeyPath: "fractionCompleted", options: NSKeyValueObservingOptions.New, context: nil)
         
         
     }
     
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        
-        if keyPath !=  "fractionCompleted" {
-           super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
-            
-        }
-    }
+//    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+//        
+//        if keyPath !=  "fractionCompleted" {
+//           super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+//            
+//        }
+//    }
     
     //Garbage collector - Explicitly
     deinit {
@@ -129,11 +130,12 @@ class DetailViewController: UIViewController, iCarouselDataSource, iCarouselDele
     }
     
     func removeSubViews(){
-        self.carousel.hidden = true
+        self.carousel?.hidden = true
         
-        self.carousel.delegate = nil
-        self.carousel.dataSource = nil
+        self.carousel?.delegate = nil
+        self.carousel?.dataSource = nil
         self.carousel = nil
+        DataManager.sharedDataManager().stopActivityIndicator()
     }
     
 }
