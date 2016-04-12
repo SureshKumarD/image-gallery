@@ -279,16 +279,23 @@
                                 <rect key="frame" x="30" y="224" width="260" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please login, to see the beautiful images" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1z-tB-5jk">
-                                        <rect key="frame" x="0.0" y="10" width="260" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="q0s-Hc-dPh"/>
-                                        </constraints>
+                                        <rect key="frame" x="15" y="15" width="230" height="55"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5X-RL-Vwq">
                                         <rect key="frame" x="0.0" y="80" width="260" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="w8b-36-J9V"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                         <state key="normal" title="www.imgur.com">
                                             <color key="titleColor" red="0.070588235289999995" green="0.70980392160000005" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -302,18 +309,18 @@
                                 <constraints>
                                     <constraint firstItem="O5X-RL-Vwq" firstAttribute="leading" secondItem="3RF-t4-J1c" secondAttribute="leading" id="9EY-Cs-JME"/>
                                     <constraint firstAttribute="height" constant="120" id="Fyg-z9-grb"/>
-                                    <constraint firstAttribute="trailing" secondItem="N1z-tB-5jk" secondAttribute="trailing" id="P5G-bq-thM"/>
-                                    <constraint firstItem="N1z-tB-5jk" firstAttribute="leading" secondItem="3RF-t4-J1c" secondAttribute="leading" id="Tn3-Gm-VYV"/>
+                                    <constraint firstAttribute="trailing" secondItem="N1z-tB-5jk" secondAttribute="trailing" constant="15" id="P5G-bq-thM"/>
+                                    <constraint firstItem="N1z-tB-5jk" firstAttribute="leading" secondItem="3RF-t4-J1c" secondAttribute="leading" constant="15" id="Tn3-Gm-VYV"/>
                                     <constraint firstAttribute="trailing" secondItem="O5X-RL-Vwq" secondAttribute="trailing" id="Wrf-V4-WHQ"/>
                                     <constraint firstAttribute="bottom" secondItem="O5X-RL-Vwq" secondAttribute="bottom" constant="10" id="e64-oN-eFu"/>
                                     <constraint firstItem="O5X-RL-Vwq" firstAttribute="top" secondItem="N1z-tB-5jk" secondAttribute="bottom" constant="10" id="hHv-EX-NMl"/>
-                                    <constraint firstItem="N1z-tB-5jk" firstAttribute="top" secondItem="3RF-t4-J1c" secondAttribute="top" constant="10" id="spd-A5-eGx"/>
+                                    <constraint firstItem="N1z-tB-5jk" firstAttribute="top" secondItem="3RF-t4-J1c" secondAttribute="top" constant="15" id="spd-A5-eGx"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRardius">
-                                        <integer key="value" value="10"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>

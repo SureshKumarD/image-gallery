@@ -25,8 +25,8 @@ class MenuTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
         self.dataSource = self
         self.menuTitlesArray = ["Hot", "Top", "User"]
         self.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
-        
-        
+        self.tableFooterView = UIView(frame: CGRectZero)
+    
         self.backgroundColor = kBLACK_COLOR
     }
     
@@ -59,16 +59,22 @@ class MenuTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
         
         if (cell == nil) {
             cell = UITableViewCell(style: .Default, reuseIdentifier: "Cell")
+            cell?.textLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 15)
+            cell?.textLabel?.textColor = kWHITE_COLOR
+            cell?.textLabel?.backgroundColor = UIColor.grayColor()
+            cell?.textLabel?.layer.masksToBounds = true
+            cell.textLabel?.layer.cornerRadius = 5.0
+            cell.backgroundColor = UIColor.blackColor()
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
+            
         }
-        cell?.textLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 20)
-        cell?.textLabel?.textColor = kWHITE_COLOR
+        
         if(indexPath.section == NUMBER_ZERO) {
             cell?.textLabel?.text = self.menuTitlesArray[indexPath.row]
         }else {
             cell?.textLabel?.text = "About"
         }
-        cell.backgroundColor = kGRAY_COLOR
-        cell.selectionStyle = UITableViewCellSelectionStyle.Blue
+        
         return cell!
         
     }

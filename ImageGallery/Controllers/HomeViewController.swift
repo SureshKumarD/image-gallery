@@ -377,19 +377,19 @@ class HomeViewController: UIViewController, AlbumDelegate, MenuDelegate {
             
         case GalleryView.Staggered? :
             self.galleryViewOption = GalleryView.List
-            image = UIImage(named: "list")
+            image = UIImage(named: "listIcon")
             self.changeViewOptionToList()
             break
             
         case GalleryView.List?:
             self.galleryViewOption = GalleryView.Grid
-             image = UIImage(named: "grid")
+             image = UIImage(named: "gridIcon")
             self.changeViewOptionToGrid()
             break
        
         case GalleryView.Grid? :
             self.galleryViewOption = GalleryView.Staggered
-            image = UIImage(named: "staggeredGrid")
+            image = UIImage(named: "staggeredGridIcon")
             self.changeViewOptionToStaggeredGrid()
             break
             
@@ -397,8 +397,12 @@ class HomeViewController: UIViewController, AlbumDelegate, MenuDelegate {
             break
         }
         
-        self.navigationRightButton.setImage(image, forState: UIControlState.Normal)
         
+        
+        let newImage =   image?.imageWithRenderingMode(.AlwaysTemplate) as UIImage!
+        
+        self.navigationRightButton.setImage(newImage, forState: .Normal)
+        self.navigationRightButton.tintColor = kWHITE_COLOR
         
     }
     
