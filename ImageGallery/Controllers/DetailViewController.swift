@@ -13,13 +13,13 @@ class DetailViewController: UIViewController, iCarouselDataSource, iCarouselDele
     @IBOutlet var carousel : iCarousel!
     var imagesArray  = []
     var progress = NSProgress()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        carousel.type = .Linear
-        carousel.dataSource = self
-        carousel.delegate = self
-        
-        
+        self.carousel.type = .Linear
+        self.carousel.dataSource = self
+        self.carousel.delegate = self
+       
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -27,7 +27,10 @@ class DetailViewController: UIViewController, iCarouselDataSource, iCarouselDele
         self.setGradientBackground()
         self.preloadAlbumImages()
     }
-    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.removeSubViews()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -87,7 +90,7 @@ class DetailViewController: UIViewController, iCarouselDataSource, iCarouselDele
     
     //Preload images
     func preloadAlbumImages() {
-        
+        DataManager.sharedDataManager().startActivityIndicator()
         self.carousel.hidden = true
         var imageUrlsArray :[AnyObject]! = []
         for image in self.imagesArray {
@@ -98,11 +101,12 @@ class DetailViewController: UIViewController, iCarouselDataSource, iCarouselDele
         
         SDWebImagePrefetcher.sharedImagePrefetcher().prefetchURLs(imageUrlsArray, progress: { (int1 : UInt, int2 : UInt) -> Void in
             self.carousel.hidden = false
-            self.carousel.reloadData()
+            
             
             }) { (int1 : UInt, int2 :UInt) -> Void in
                 self.carousel.hidden = false
                 self.carousel.reloadData()
+                DataManager.sharedDataManager().stopActivityIndicator()
                 self.progress.removeObserver(self, forKeyPath: "fractionCompleted", context: nil)
                 
         }
@@ -121,9 +125,15 @@ class DetailViewController: UIViewController, iCarouselDataSource, iCarouselDele
     
     //Garbage collector - Explicitly
     deinit {
-        self.carousel.hidden = true
-        self.carousel = nil
+       self.removeSubViews()
     }
     
+    func removeSubViews(){
+        self.carousel.hidden = true
+        
+        self.carousel.delegate = nil
+        self.carousel.dataSource = nil
+        self.carousel = nil
+    }
     
 }

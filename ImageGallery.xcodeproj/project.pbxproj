@@ -996,7 +996,7 @@
 				F99273301CB422B0001CC471 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		F99273311CB422B0001CC471 /* Build configuration list for PBXNativeTarget "ImageGallery" */ = {
 			isa = XCConfigurationList;
@@ -1005,7 +1005,7 @@
 				F99273331CB422B0001CC471 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		F99273341CB422B0001CC471 /* Build configuration list for PBXNativeTarget "ImageGalleryTests" */ = {
 			isa = XCConfigurationList;
@@ -1014,7 +1014,7 @@
 				F99273361CB422B0001CC471 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		F99273371CB422B0001CC471 /* Build configuration list for PBXNativeTarget "ImageGalleryUITests" */ = {
 			isa = XCConfigurationList;
@@ -1023,7 +1023,7 @@
 				F99273391CB422B0001CC471 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

@@ -45,9 +45,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, IMGSessionDelegate{
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    //MARK:-  To handle the openUrl for iOS8
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        return isReceivedAuthentication(annotation, url: url)
+    }
+    
+    
+    //MARK:- Default iOS9
     func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
         
+        
+        return isReceivedAuthentication(options, url: url)
+
+    }
+    
+    
+    func isReceivedAuthentication(annotation : AnyObject, url : NSURL) -> Bool {
         let params = NSMutableDictionary()
         
         for param in (url.query?.componentsSeparatedByString("&"))! {
@@ -82,10 +96,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, IMGSessionDelegate{
         
         return true
 
-        
-
     }
-    
     
     
     //MARK:- IMGSessionDelegate

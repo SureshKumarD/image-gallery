@@ -33,6 +33,38 @@
             endingLineNumber = "890"
             landmarkName = "-GET:parameters:success:failure:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__45-[IMGSession GET:parameters:success:failure:]_block_invoke_3"
+                  moduleName = "ImageGallery"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/suresh/Documents/ImageGallery/ImageGallery/ImgurSession/IMGSession.m"
+                  timestampString = "482133141.868008"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "890"
+                  endingLineNumber = "890"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__45-[IMGSession GET:parameters:success:failure:]_block_invoke_4"
+                  moduleName = "ImageGallery"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/suresh/Documents/ImageGallery/ImageGallery/ImgurSession/IMGSession.m"
+                  timestampString = "482133141.868236"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "890"
+                  endingLineNumber = "890"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -97,38 +129,6 @@
             endingLineNumber = "172"
             landmarkName = "albumSelected(_:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ImageGallery.HomeViewController.(albumSelected (ImageGallery.HomeViewController) -&gt; (Swift.ImplicitlyUnwrappedOptional&lt;Swift.AnyObject&gt;) -&gt; ()).(closure #1)"
-                  moduleName = "ImageGallery"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suresh/Documents/ImageGallery/ImageGallery/HomeViewController.swift"
-                  timestampString = "482076125.164773"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "173"
-                  endingLineNumber = "173"
-                  offsetFromSymbolStart = "1710">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ImageGallery.HomeViewController.(albumSelected (ImageGallery.HomeViewController) -&gt; (Swift.ImplicitlyUnwrappedOptional&lt;Swift.AnyObject&gt;) -&gt; ()).(closure #2)"
-                  moduleName = "ImageGallery"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suresh/Documents/ImageGallery/ImageGallery/HomeViewController.swift"
-                  timestampString = "482076125.165063"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "175"
-                  endingLineNumber = "175"
-                  offsetFromSymbolStart = "19">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -177,38 +177,6 @@
             endingLineNumber = "30"
             landmarkName = "fetchAlbums()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ext.ImageGallery.__ObjC.UIScrollView.fetchAlbums (__ObjC.UIScrollView)() -&gt; ()"
-                  moduleName = "ImageGallery"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suresh/Documents/ImageGallery/ImageGallery/UIScrollView+Custom.swift"
-                  timestampString = "482076125.174134"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "37">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ext.ImageGallery.__ObjC.UIScrollView.(fetchAlbums (__ObjC.UIScrollView) -&gt; () -&gt; ()).(closure #1)"
-                  moduleName = "ImageGallery"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suresh/Documents/ImageGallery/ImageGallery/UIScrollView+Custom.swift"
-                  timestampString = "482076125.174426"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -250,92 +218,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImageGallery/AppDelegate.swift"
-            timestampString = "482047681.124505"
+            timestampString = "482131802.8158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "application(_:openURL:options:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ImageGallery/AppDelegate.swift"
-            timestampString = "482047681.124505"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "application(_:openURL:options:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ImageGallery.AppDelegate.application (ImageGallery.AppDelegate)(__ObjC.UIApplication, openURL : __ObjC.NSURL, options : Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; Swift.Bool"
-                  moduleName = "ImageGallery"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suresh/Documents/ImageGallery/ImageGallery/AppDelegate.swift"
-                  timestampString = "482076125.191991"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
-                  offsetFromSymbolStart = "2727">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ImageGallery.AppDelegate.(application (ImageGallery.AppDelegate) -&gt; (__ObjC.UIApplication, openURL : __ObjC.NSURL, options : Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; Swift.Bool).(closure #1)"
-                  moduleName = "ImageGallery"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suresh/Documents/ImageGallery/ImageGallery/AppDelegate.swift"
-                  timestampString = "482076125.192241"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "73"
-                  endingLineNumber = "73"
-                  offsetFromSymbolStart = "19">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ImageGallery/AppDelegate.swift"
-            timestampString = "482047681.124505"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "application(_:openURL:options:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ImageGallery/AppDelegate.swift"
-            timestampString = "482047681.124505"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "imgurSessionNeedsExternalWebview(_:completion:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageGallery/Controllers/DetailViewController.swift"
+            timestampString = "482133141.798575"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "preloadAlbumImages()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
