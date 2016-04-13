@@ -298,7 +298,7 @@ class HomeViewController: BaseViewController, AlbumDelegate, MenuDelegate {
         self.navigationTitleLabel.text = "Hot"
         self.navigationTitleLabel.textAlignment = NSTextAlignment.Center
         self.navigationTitleDisclosureView = UIImageView(frame: CGRect(x: self.navigationTitleView.frame.size.width/2 - 10, y: 38, width: 21, height: 12))
-        self.navigationTitleDisclosureView.contentMode = UIViewContentMode.ScaleAspectFit
+        self.navigationTitleDisclosureView.contentMode = UIViewContentMode.Center
         self.navigationTitleDisclosureView.image = UIImage(named: "DownArrow")
         self.navigationTitleDisclosureView.image? = (self.navigationTitleDisclosureView.image?.imageWithRenderingMode(.AlwaysTemplate))!
         self.navigationTitleDisclosureView.tintColor = kWHITE_COLOR

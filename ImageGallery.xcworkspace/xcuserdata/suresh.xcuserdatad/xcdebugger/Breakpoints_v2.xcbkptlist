@@ -42,7 +42,7 @@
                   moduleName = "ImageGallery"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/suresh/Documents/ImageGallery/ImageGallery/ImgurSession/IMGSession.m"
-                  timestampString = "482231331.300324"
+                  timestampString = "482255358.469811"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "890"
@@ -57,12 +57,12 @@
                   moduleName = "ImageGallery"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/suresh/Documents/ImageGallery/ImageGallery/ImgurSession/IMGSession.m"
-                  timestampString = "482231331.30053"
+                  timestampString = "482255358.470077"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "890"
                   endingLineNumber = "890"
-                  offsetFromSymbolStart = "40">
+                  offsetFromSymbolStart = "72">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -153,22 +153,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ImageGallery/Views/CollectionView/GalleryCollectionView.swift"
-            timestampString = "482006567.005562"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "reloadTableOrCollectionView(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ImageGallery/UIScrollView+Custom.swift"
             timestampString = "482006668.357598"
             startingColumnNumber = "9223372036854775807"
@@ -217,22 +201,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ImageGallery/AppDelegate.swift"
-            timestampString = "482227710.805919"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "imgurSessionNeedsExternalWebview(_:completion:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ImageGallery/Controllers/DetailViewController.swift"
             timestampString = "482141561.71618"
             startingColumnNumber = "9223372036854775807"
@@ -249,13 +217,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ImageGallery/Controllers/BaseViewController.swift"
-            timestampString = "482231880.517535"
+            filePath = "ImageGallery/Models/Extension/UIScrollView+Custom.swift"
+            timestampString = "482254703.949049"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "networkChanged(_:)"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

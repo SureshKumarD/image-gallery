@@ -20,6 +20,8 @@ extension UIScrollView : UIScrollViewDelegate {
             if(DataManager.sharedDataManager().isRequiredLoadNextPage == false ) {
                 DataManager.sharedDataManager().isRequiredLoadNextPage = true
                 DataManager.sharedDataManager().currentPage += 1
+                print("pageNumber : \(DataManager.sharedDataManager().currentPage)")
+                DataManager.sharedDataManager().startActivityIndicator()
                 self.fetchAlbums()
             }
         }
@@ -31,6 +33,7 @@ extension UIScrollView : UIScrollViewDelegate {
             (objects:[AnyObject]!) -> Void in
             self.reloadTableOrCollectionView(objects)
             sharedInstance.isRequiredLoadNextPage = false
+            DataManager.sharedDataManager().stopActivityIndicator()
         })
     
     }

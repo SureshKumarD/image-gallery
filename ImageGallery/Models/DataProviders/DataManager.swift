@@ -47,8 +47,9 @@ class DataManager: NSObject {
         
         if(self.activityIndicator == nil){
             self.activityIndicator  = UIActivityIndicatorView()
-            self.activityIndicator?.frame = CGRectMake(WIDTH_WINDOW_FRAME/2 - 50, HEIGHT_WINDOW_FRAME/2-50, 100, 100)
+            
         }
+        self.activityIndicator?.frame = CGRectMake(WIDTH_WINDOW_FRAME/2 - 50, HEIGHT_WINDOW_FRAME/2-50, 100, 100)
         self.activityIndicator?.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
         
         let mainWindow = UIApplication.sharedApplication().keyWindow
@@ -56,6 +57,7 @@ class DataManager: NSObject {
         
         self.activityIndicator?.startAnimating()
     }
+    
     
     func stopActivityIndicator() {
         self.activityIndicator?.stopAnimating()

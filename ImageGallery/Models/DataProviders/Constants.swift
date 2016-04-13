@@ -13,6 +13,7 @@ let APP_DELEGATE_INSTANCE = UIApplication.sharedApplication().delegate as? AppDe
 let kBLACK_COLOR = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1.0)
 let kGRAY_COLOR = UIColor(red: 102/255, green: 102/255, blue: 108/255, alpha: 1.0)
 let kWHITE_COLOR = UIColor.whiteColor()
+let kSUB_TEXT_COLOR = UIColor(red: 99/255, green: 99/255, blue: 99/255, alpha: 1.0)
 
 //Border..
 let kTILE_BORDER = 5.0

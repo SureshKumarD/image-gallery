@@ -77,6 +77,7 @@
 		F992732D1CB422B0001CC471 /* ImageGalleryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F992732C1CB422B0001CC471 /* ImageGalleryUITests.swift */; };
 		F9AA1FB71CBE270B00A68431 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AA1FB61CBE270B00A68431 /* BaseViewController.swift */; };
 		F9AA1FBA1CBE31DD00A68431 /* UIAlertView+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AA1FB91CBE31DD00A68431 /* UIAlertView+Custom.swift */; };
+		F9AE9B691CBE83AB00E8894D /* albumIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F9AE9B681CBE83AB00E8894D /* albumIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +208,7 @@
 		F992732E1CB422B0001CC471 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9AA1FB61CBE270B00A68431 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F9AA1FB91CBE31DD00A68431 /* UIAlertView+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertView+Custom.swift"; sourceTree = "<group>"; };
+		F9AE9B681CBE83AB00E8894D /* albumIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = albumIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -427,6 +429,7 @@
 				F9365C701CBC1E6A0076FC30 /* gridIcon.png */,
 				F9365C711CBC1E6A0076FC30 /* listIcon.png */,
 				F9365C721CBC1E6A0076FC30 /* placeholder2.png */,
+				F9AE9B681CBE83AB00E8894D /* albumIcon.png */,
 				F9365C731CBC1E6A0076FC30 /* Screenshots */,
 				F9365C741CBC1E6A0076FC30 /* staggeredGridIcon.png */,
 				F9365C751CBC1E6A0076FC30 /* UpArrow.png */,
@@ -652,6 +655,7 @@
 			files = (
 				F9365CB41CBC1E6A0076FC30 /* staggeredGridIcon.png in Resources */,
 				F9365CC51CBC1F300076FC30 /* Grid.png in Resources */,
+				F9AE9B691CBE83AB00E8894D /* albumIcon.png in Resources */,
 				F9365CB51CBC1E6A0076FC30 /* UpArrow.png in Resources */,
 				F9365CC61CBC1F300076FC30 /* Main_Menu.png in Resources */,
 				F9365CC31CBC1F300076FC30 /* Staggered_Grid.png in Resources */,

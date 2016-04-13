@@ -19,8 +19,9 @@ public class GalleryCollectionView: UICollectionView, UICollectionViewDataSource
     //Delegate to pass data
     static var albumDelegate : AlbumDelegate!
     
-    
-    
+    //Number Formatter - (comma , )separated numbers...
+    let numberFormatter = NSNumberFormatter()
+
     var viewOption : GalleryView!
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -28,6 +29,7 @@ public class GalleryCollectionView: UICollectionView, UICollectionViewDataSource
         self.dataSource = self
         self.imagesInfoArray = []
         self.viewOption = GalleryView.Staggered
+        self.numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
         
     }
 
@@ -37,13 +39,14 @@ public class GalleryCollectionView: UICollectionView, UICollectionViewDataSource
     
     //MARK: - CollectionView Datasources
     public func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
+        return NUMBER_ONE
     }
     
     public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.imagesInfoArray.count
     }
     public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GalleryCollectionViewCell", forIndexPath: indexPath) as! GalleryCollectionViewCell
         
         let object = self.imagesInfoArray[indexPath.row]
@@ -54,11 +57,23 @@ public class GalleryCollectionView: UICollectionView, UICollectionViewDataSource
         }else {
             url = coverImage.URLWithSize(IMGSize.BigSquareSize) as NSURL
         }
-       
+        //Album title
         cell.albumTitleLabel.text = object.valueForKey("title") as? String
+        
+        //Album Cover Image
         cell.albumImageView.sd_setImageWithURL(url, placeholderImage: UIImage(named: "placeholder2"), options: SDWebImageOptions.CacheMemoryOnly)
-        cell.albumUpsLabel.text = SYMBOL_UP_ARROW+"\(object.ups)"
-        cell.albumDownsLabel.text = SYMBOL_DOWN_ARROW+"\(object.downs)"
+
+        //Up votes
+        var tempString = self.numberFormatter.stringFromNumber(NSNumber(integer:object.ups as NSInteger!))!
+        cell.albumUpsLabel.text = SYMBOL_UP_ARROW + tempString
+        
+        //Down votes
+        tempString = self.numberFormatter.stringFromNumber(NSNumber(integer:object.downs as NSInteger!))!
+        cell.albumDownsLabel.text = SYMBOL_DOWN_ARROW + tempString
+        
+        //Number of images
+        cell.albumImagesLabel.text = "\(object.imagesCount)"
+        
         return cell
     }
 
