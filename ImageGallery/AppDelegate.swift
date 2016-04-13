@@ -17,9 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, IMGSessionDelegate{
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        //Authenticate Imgur api using IMGSession ObjectiveC SDK...
         IMGSession.authenticatedSessionWithClientID(CLIENT_ID, secret: SECRET_KEY, authType: IMGAuthType.CodeAuth, withDelegate:self)
-//        self.launchedUrl = launchOptions![UIApplicationLaunchOptionsURLKey] as! Bool
-//
         
         return true
     }

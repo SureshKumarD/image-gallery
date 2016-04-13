@@ -75,6 +75,8 @@
 		F9365CCB1CBC23760076FC30 /* App_Info.png in Resources */ = {isa = PBXBuildFile; fileRef = F9365CCA1CBC23760076FC30 /* App_Info.png */; };
 		F99273221CB422B0001CC471 /* ImageGalleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99273211CB422B0001CC471 /* ImageGalleryTests.swift */; };
 		F992732D1CB422B0001CC471 /* ImageGalleryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F992732C1CB422B0001CC471 /* ImageGalleryUITests.swift */; };
+		F9AA1FB71CBE270B00A68431 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AA1FB61CBE270B00A68431 /* BaseViewController.swift */; };
+		F9AA1FBA1CBE31DD00A68431 /* UIAlertView+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AA1FB91CBE31DD00A68431 /* UIAlertView+Custom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,6 +205,8 @@
 		F99273281CB422B0001CC471 /* ImageGalleryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageGalleryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F992732C1CB422B0001CC471 /* ImageGalleryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryUITests.swift; sourceTree = "<group>"; };
 		F992732E1CB422B0001CC471 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9AA1FB61CBE270B00A68431 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F9AA1FB91CBE31DD00A68431 /* UIAlertView+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertView+Custom.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +276,7 @@
 				F9365C191CBC1E6A0076FC30 /* DetailViewController.swift */,
 				F9365C1A1CBC1E6A0076FC30 /* HomeViewController.swift */,
 				F9365C1B1CBC1E6A0076FC30 /* LoginViewController.swift */,
+				F9AA1FB61CBE270B00A68431 /* BaseViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -452,6 +457,7 @@
 		F9365C771CBC1E6A0076FC30 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F9AA1FB81CBE319200A68431 /* Extensions */,
 				F9365C781CBC1E6A0076FC30 /* CollectionView */,
 				F9365C7C1CBC1E6A0076FC30 /* TableView */,
 			);
@@ -527,6 +533,14 @@
 				F992732E1CB422B0001CC471 /* Info.plist */,
 			);
 			path = ImageGalleryUITests;
+			sourceTree = "<group>";
+		};
+		F9AA1FB81CBE319200A68431 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F9AA1FB91CBE31DD00A68431 /* UIAlertView+Custom.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -734,12 +748,14 @@
 				F9365C971CBC1E6A0076FC30 /* IMGMeme.m in Sources */,
 				F9365C8B1CBC1E6A0076FC30 /* IMGResponseSerializer.m in Sources */,
 				F9365C9F1CBC1E6A0076FC30 /* IMGAlbumRequest.m in Sources */,
+				F9AA1FB71CBE270B00A68431 /* BaseViewController.swift in Sources */,
 				F9365CA31CBC1E6A0076FC30 /* IMGGalleryRequest.m in Sources */,
 				F9365CA01CBC1E6A0076FC30 /* IMGCommentRequest.m in Sources */,
 				F9365C961CBC1E6A0076FC30 /* IMGImage.m in Sources */,
 				F9365CBA1CBC1E6A0076FC30 /* GalleryTableViewCell.swift in Sources */,
 				F9365C9E1CBC1E6A0076FC30 /* IMGAccountRequest.m in Sources */,
 				F9365CB61CBC1E6A0076FC30 /* GalleryCollectionView.swift in Sources */,
+				F9AA1FBA1CBE31DD00A68431 /* UIAlertView+Custom.swift in Sources */,
 				F9365C861CBC1E6A0076FC30 /* DetailViewController.swift in Sources */,
 				F9365C851CBC1E6A0076FC30 /* AppInfoViewController.swift in Sources */,
 				F9365C941CBC1E6A0076FC30 /* IMGGalleryImage.m in Sources */,

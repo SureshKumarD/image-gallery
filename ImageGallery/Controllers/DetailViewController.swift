@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, iCarouselDataSource, iCarouselDelegate {
+class DetailViewController: BaseViewController, iCarouselDataSource, iCarouselDelegate {
 
     @IBOutlet var carousel : iCarousel!
     var imagesArray  = []

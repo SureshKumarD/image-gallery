@@ -19,9 +19,11 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import <QuartzCore/QuartzCore.h>
 
-#import "AFNetworking.h"
+#import "Pods/AFNetworking/AFNetworking/AFNetworking.h"
+#import "Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.h"
 #import "Pods/SDWebImage/SDWebImage/UIImageView+WebCache.h"
 #import "Pods/SDWebImage/SDWebImage/SDWebImagePrefetcher.h"
+
 
 //Imgur api library
 #import "ImageGallery/ImgurSession/IMGSession.h"

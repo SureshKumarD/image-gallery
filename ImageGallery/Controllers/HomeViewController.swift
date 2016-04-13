@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, AlbumDelegate, MenuDelegate {
+class HomeViewController: BaseViewController, AlbumDelegate, MenuDelegate {
     
     //Storyboard objects...
     @IBOutlet weak var galleryTypeSegmentControl: UISegmentedControl!
