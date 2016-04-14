@@ -84,18 +84,12 @@ class DetailViewController: BaseViewController,UITableViewDelegate, UITableViewD
             imageUrlsArray.append(image["link"]as! String)
 
         }
-        
-        
         SDWebImagePrefetcher.sharedImagePrefetcher().prefetchURLs(imageUrlsArray, progress: { (int1 : UInt, int2 : UInt) -> Void in
             self.unHideAllSubviews()
-//            self.carousel?.hidden = false
-            
             
             }) { (int1 : UInt, int2 :UInt) -> Void in
-//                self.carousel?.hidden = false
-//                self.carousel?.reloadData()
                 DataManager.sharedDataManager().stopActivityIndicator()
-//                self.progress.removeObserver(self, forKeyPath: "fractionCompleted", context: nil)
+                self.unHideAllSubviews()
                 
         }
         
