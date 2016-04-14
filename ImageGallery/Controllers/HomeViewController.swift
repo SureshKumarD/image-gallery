@@ -56,12 +56,6 @@ class HomeViewController: BaseViewController, AlbumDelegate, MenuDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    override func viewDidLayoutSubviews() {
-        NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: Selector("didFinishLayout"), object: nil)
-        self.performSelector(Selector("didFinishLayout"), withObject: nil, afterDelay: 0)
-    }
-    
     
     //MARK:- METHODS
     
@@ -139,7 +133,7 @@ class HomeViewController: BaseViewController, AlbumDelegate, MenuDelegate {
     }
     
     //Handler when view did finish layout...
-    func didFinishLayout() {
+    override func didFinishLayout() {
         self.galleryCollectionView.frame = self.galleryTypeContainerView.bounds
         self.galleryTableView.frame = self.galleryTypeContainerView.bounds
         self.menuTableView.frame = self.galleryTypeContainerView.bounds
@@ -331,7 +325,7 @@ class HomeViewController: BaseViewController, AlbumDelegate, MenuDelegate {
     func unFoldMainMenu() {
         self.navigationTitleView.userInteractionEnabled = false
         self.menuTableView.hidden = false
-        UIView.animateWithDuration(0.75, delay: 0.0, options: UIViewAnimationOptions.TransitionFlipFromBottom, animations: { () -> Void in
+        UIView.animateWithDuration(0.25, delay: 0.0, options: UIViewAnimationOptions.TransitionFlipFromBottom, animations: { () -> Void in
             let frame = self.galleryTypeContainerView.frame
             self.menuTableView.frame = frame
             self.navigationTitleDisclosureView.image = UIImage(named: "UpArrow")
@@ -351,7 +345,7 @@ class HomeViewController: BaseViewController, AlbumDelegate, MenuDelegate {
     //Close MainMenu
     func foldMainMenu() {
         self.navigationTitleView.userInteractionEnabled = false
-        UIView.animateWithDuration(0.75, delay: 0.0, options: UIViewAnimationOptions.TransitionFlipFromTop, animations: { () -> Void in
+        UIView.animateWithDuration(0.25, delay: 0.0, options: UIViewAnimationOptions.TransitionFlipFromTop, animations: { () -> Void in
             var frame = self.galleryTypeContainerView.frame
             frame.origin.y = (self.galleryTypeContainerView.frame.size.height + 64) * -1
             self.menuTableView.frame = frame

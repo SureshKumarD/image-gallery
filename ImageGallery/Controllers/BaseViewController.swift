@@ -38,6 +38,19 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidLayoutSubviews() {
+        NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: Selector("didFinishLayout"), object: nil)
+        self.performSelector(Selector("didFinishLayout"), withObject: nil, afterDelay: 0)
+    }
+    
+    
+    //When all subviews finish layout...
+    func didFinishLayout() {
+        
+        
+    }
+
+    
     //MARK:- Reachability observer - notifier
     //Add Reachability Observer
     func addreachabilityObserver() {

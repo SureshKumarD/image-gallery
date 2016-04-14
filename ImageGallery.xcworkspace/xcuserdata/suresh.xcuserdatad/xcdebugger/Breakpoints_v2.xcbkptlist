@@ -33,38 +33,6 @@
             endingLineNumber = "890"
             landmarkName = "-GET:parameters:success:failure:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__45-[IMGSession GET:parameters:success:failure:]_block_invoke_3"
-                  moduleName = "ImageGallery"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suresh/Documents/ImageGallery/ImageGallery/ImgurSession/IMGSession.m"
-                  timestampString = "482255358.469811"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "890"
-                  endingLineNumber = "890"
-                  offsetFromSymbolStart = "80">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__45-[IMGSession GET:parameters:success:failure:]_block_invoke_4"
-                  moduleName = "ImageGallery"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/suresh/Documents/ImageGallery/ImageGallery/ImgurSession/IMGSession.m"
-                  timestampString = "482255358.470077"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "890"
-                  endingLineNumber = "890"
-                  offsetFromSymbolStart = "72">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -192,38 +160,6 @@
             startingLineNumber = "202"
             endingLineNumber = "202"
             landmarkName = "menuSelected(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ImageGallery/Controllers/DetailViewController.swift"
-            timestampString = "482141561.71618"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "preloadAlbumImages()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ImageGallery/Models/Extension/UIScrollView+Custom.swift"
-            timestampString = "482254703.949049"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

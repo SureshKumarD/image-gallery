@@ -16,6 +16,12 @@ extension UIScrollView : UIScrollViewDelegate {
     
     
     public func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        //If scrollview is not GalleryTableview/GalleryCollectionView quit abruptly...
+        if(!(self.isKindOfClass(GalleryTableView) == true || self.isKindOfClass(GalleryCollectionView) == true)) {
+            return
+            
+        }
         if(self.contentOffset.y + 100 >= self.contentSize.height - self.bounds.size.height) {
             if(DataManager.sharedDataManager().isRequiredLoadNextPage == false ) {
                 DataManager.sharedDataManager().isRequiredLoadNextPage = true
