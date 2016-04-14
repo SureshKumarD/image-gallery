@@ -13,11 +13,12 @@ class LoginViewController: BaseViewController {
      @IBOutlet weak var loginBannerView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barTintColor = UIColor.clearColor()
-        self.title = "Login..."
-        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
-        self.navigationController?.navigationBar.tintColor = kWHITE_COLOR
-        self.navigationController?.navigationBar.translucent = false
+//        self.navigationController?.navigationBar.barTintColor = UIColor.clearColor()
+//        self.title = "Login..."
+//        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+//        self.navigationController?.navigationBar.tintColor = kWHITE_COLOR
+//        self.navigationController?.navigationBar.translucent = false
+        self.navigationController?.navigationBar.hidden = true
         
         //This first hit is to get authentication
         self.proceedLogin()

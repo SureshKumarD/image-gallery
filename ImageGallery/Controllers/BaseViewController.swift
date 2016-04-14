@@ -12,7 +12,7 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.navigationBar.hidden = false
         //Initiate the Network Monitoring...
         AFNetworkReachabilityManager.sharedManager().startMonitoring();
 
